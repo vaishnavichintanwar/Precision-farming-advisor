@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ICRISAT-District Level Data</title>
+	<!-- CSS Files -->
+	<link rel="icon" href="../src/assets/images/favicon.ico" type="image/png">
+	<link href="../lib/css/new-style.css" rel="stylesheet">
+	<link href="../lib/css/custom1.css" rel="stylesheet">
+	<link href="../lib/css/responsive.css" rel="stylesheet">
+	<link href="../lib/css/color.css" rel="stylesheet">
+	<!-- bootstrap framework-->
+	<link rel="stylesheet" href="../lib/select2/bootstrap/css/bootstrap.min.css">
+	<!-- todc-bootstrap -->
+	<link rel="stylesheet" href="../lib/select2/css/todc-bootstrap.min.css">
+	<!-- font awesome -->
+	<link rel="stylesheet" href="../lib/select2/css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../lib/select2/css/retina.css">
+	<!-- bootstrap switch -->
+	<link rel="stylesheet" href="../lib/select2/js/lib/bootstrap-switch/stylesheets/bootstrap-switch.css">
+	<link rel="stylesheet" href="../lib/select2/js/lib/bootstrap-switch/stylesheets/ebro_bootstrapSwitch.css">
+
+	<!-- aditional stylesheets -->
+	<!-- 2col multiselect -->
+	<link rel="stylesheet" href="../lib/select2/js/lib/multi-select/css/multi-select.css">
+	<link rel="stylesheet" href="../lib/select2/js/lib/multi-select/css/ebro_multi-select.css">
+	<!-- select2 -->
+	<link rel="stylesheet" href="../lib/select2/js/lib/select2/select2.css">
+	<link rel="stylesheet" href="../lib/select2/js/lib/select2/ebro_select2.css">
+	<!-- datepicker -->
+	<link rel="stylesheet" href="../lib/select2/js/lib/datepicker/css/datepicker.css">
+	<!-- timepicker -->
+	<link rel="stylesheet" href="../lib/select2/js/lib/timepicker/css/bootstrap-timepicker.min.css">
+	<!-- colorpicker -->
+	<link rel="stylesheet" href="../lib/select2/js/lib/colorpicker/css/colorpicker.css">
+	<!-- iCheck -->
+	<link href="../lib/select2/js/lib/iCheck/skins/minimal/minimal.css" rel="stylesheet" id="icheck_theme">
+	<link rel="stylesheet" href="../lib/select2/js/lib/noUiSlider/jquery.nouislider.min.css">
+	<!-- Ion rangeSlider -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css">
+	<!-- fSelect -->
+	<link rel="stylesheet" href="../lib/fSelect-master/fSelect.css">
+	<!-- DataTables -->
+	<link rel="stylesheet" type="text/css" href="../lib/DataTables/media/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="../lib/DataTables/Buttons/css/buttons.dataTables.min.css">
+	<!-- ebro styles -->
+	<link rel="stylesheet" href="../lib/select2/css/style.css">
+	<link rel="stylesheet" href="../lib/mdb/css/mdb.min.css">
+	<!-- ebro theme -->
+	<link rel="stylesheet" href="../lib/select2/css/theme/color_1.css" id="theme">
+	<style>
+		select.form-control {
+			    /*border: 1px solid #ddd!important;*/
+			    background: #DCDCDC 0% 0% no-repeat padding-box;
+			    border: 1px solid #B4B4B4;
+			    border-radius: 4px;
+			    opacity: 1;
+			    height: 34px;
+			}
+			.irs--flat .irs-bar {
+			    top: 25px;
+			    height: 12px;
+			    background-color: #4AAC48;
+			}
+			table th {
+            background-color: #70AD47!important;
+            color: #FFFFFF;
+        }
+        .table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+            background-color: #E2EFDA;
+        }
+        .table-striped>tbody>tr:nth-child(even)>td, .table-striped>tbody>tr:nth-child(even)>th {
+                background-color: #fff;
+        }
+			/* .table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+	        background-color: #DCDCDC;
+	        }
+	        .table-striped>tbody>tr:nth-child(even)>td, .table-striped>tbody>tr:nth-child(even)>th {
+	        background-color: #F2F2F2;
+	        } */
+			.fs-label-wrap .fs-label {
+			padding: 8px 22px 10px 13px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			text-align: left;
+			background: #DCDCDC 0% 0% no-repeat padding-box;
+			/* border: 1px solid #B4B4B4; */
+			border-radius: 4px;
+			opacity: 1;
+			height: 34px;
+		}
+
+			.dataTables_wrapper .dataTables_paginate .paginate_button {
+				box-sizing: border-box;
+				display: inline-block;
+				min-width: 1.5em;
+				padding: 0.5em 1em;
+				margin-left: 2px;
+				text-align: center;
+				text-decoration: none !important;
+				cursor: pointer;
+				color: #333 !important;
+				border: 1px solid black;
+				border-radius: 2px;
+			}
+			.fs-dropdown {
+			    position: absolute;
+			    background-color: #fff;
+			    border: 1px solid #ddd;
+			    width: 92%;
+			    margin-top: 5px;
+			    z-index: 1000;
+			}
+			.main_section {
+			    margin-top: 5px;
+			}
+			body h6 {
+			    font-size: 14px;
+			    text-align: left;
+			    font: normal normal medium 30px/35px FreightSans Pro;
+			    letter-spacing: 0px;
+			    color: #131414;
+			    text-transform: capitalize;
+			    opacity: 1;
+			    font-weight: 700;
+			}
+			body h1, body h2, body h3, body h4, body h5, body h6 {
+			    font-family: "Lato", sans-serif;
+			    color: #053888;
+			    margin: 0px;
+			    text-align: left;
+			    /* font: normal normal 600 30px/39px FreightSans Pro; */
+			    letter-spacing: 0px;
+			    color: #242222;
+			    opacity: 1;
+			}
+			table th {
+		    background-color: #065724!important;
+		    color: #FFFFFF;
+		}
+		.fs-label-wrap {
+		    position: relative;
+		    background-color: #fff;
+		    border: 0px solid #ddd;
+		    cursor: default;
+		}
+		.font-25 {
+		    font-size: 25px;
+		    font-weight: 700;
+		}
+		.select_range{
+			position: relative;
+		    background: #FFFFFF 0% 0% no-repeat padding-box;
+		    box-shadow: 0px 3px 12px #00000029;
+		    border-radius: 6px;
+		    opacity: 1;
+		}
+		.text-primary-1 {
+		    color: #000!important;
+		    padding-top: 20px;
+		    font-size: 15px;
+		}
+		.gray {
+		    background-color: #d1c5c5;
+		}
+		#content_or {
+		    margin: 71px auto;
+		    text-align: center;
+		    width: auto;
+		}
+
+		.show-data{
+			background: transparent linear-gradient(275deg, #4AAC48 0%, #097B39 100%) 0% 0% no-repeat padding-box;
+			    height: 40px;
+			    color: #fff;
+			    width: 150px;
+			    border-radius: 4px;
+			    opacity: 1;
+			}
+
+		.mt-50 { margin-top: 105px; }
+		.logo-nav-row .dropdown-menu>li>a:hover {
+			background: #097b39;
+			color: #fff;
+		}
+		.main-footer {
+	    padding: 20px 0;
+	    padding-bottom: 40px;
+	    margin-bottom: 0px;
+	    background: #0e7a39!important;
+	  }
+	  .form-control:focus {
+		    border-color: #ddd;
+		}
+		.navbar-collapse.in {
+		    overflow-y: none!important;
+		}
+		.navbar-collapse.in {
+		    overflow-y: none!important;
+		}
+		.irs-diapason, .noUi-origin-lower {
+			background: none;
+		}
+		.irs-with-grid {
+			height: 60px;
+			width: inherit;
+		}
+		.btn-group-sm>.btn, .btn-sm {
+			padding: 5px 10px;
+			font-size: 12px;
+			line-height: 1.5;
+			border-radius: 3px;
+		}
+		.fs-wrap {
+			display: inline-block;
+			cursor: pointer;
+			line-height: 1;
+			width: 100%;
+		}
+		.head_style{
+			font-weight: 700!important;
+			font-size: 22px;
+			color: #0e7a39;
+			font-family: "Lato", sans-serif;
+		}
+
+		.form-control {
+			height: 30px;
+			padding: 5px 8px;
+			font-size: 16px!important;
+			line-height: 1.4;
+			background-color: #fff;
+			border: 1px solid #dddddd;
+			border-top-color: #dddddd;
+			border-radius: 1px;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			-webkit-transition: none;
+			transition: none;
+		}
+		.panel {
+			overflow: visible;
+		}
+		.btn {
+			font-size: 12px !important;
+		}
+		.btn.export {
+			margin: 0px 0px -2px 6px;
+		}
+		table td , table th {
+			font-size: 14px;
+		}
+		table th {
+			background-color: #11a911;
+			color: #FFFFFF;
+		}
+		.bg-white{
+			background: #fff;
+			padding: 20px;
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+		.irs-slider.single {
+			background: linear-gradient(blue, blue) center/2px 100% no-repeat !important;
+		}
+		.description {
+			overflow-y: hidden;
+			position: relative;
+			padding-bottom: 0px;
+			transition: height 0.5s ease;
+			-webkit-transition: height 0.5s ease;
+		}
+		.yearRow {
+			margin-top: 18px;
+		}
+		input[type=checkbox]:checked:after {
+			background: url('./assets/images/checkmark.png') #fff no-repeat;
+		}
+		.overlay {
+			opacity: 1;
+			width: 100%;
+			height: 100%;
+			margin: 0 -15px;
+			position: absolute;
+			display: block !important;
+			background: rgba(255, 255, 255, 0.6);
+		}
+
+		@media (min-width: 320px) {
+.item_pad {
+padding-top: 60px;
+}
+.logo_height {
+display: block;
+height: 49px;
+}
+.e-numbers .em-box {
+background: #fff;
+border: 1px solid #d7d7d7;
+width: 100%;
+float: left;
+padding: 20px 25px;
+border-radius: 3px;
+height: 268px;
+}
+.department-links li a {
+display: block;
+line-height: 50px;
+color: #fff;
+background: #40407e;
+font-family: 'Montserrat', sans-serif;
+font-size: 13px;
+font-weight: 600;
+border-radius: 0px;
+padding: 0 5px;
+position: relative;
+overflow: hidden;
+}
+.department-links li {
+float: left;
+padding: 0px 0px 0px 5px;
+margin: 0 0 15px;
+}
+}
+@media (min-width: 360px) {
+.logo_height {
+display: block;
+height: 57px;
+}
+
+.e-numbers .em-box {
+background: #fff;
+border: 1px solid #d7d7d7;
+width: 100%;
+float: left;
+padding: 20px 25px;
+border-radius: 3px;
+height: 230px;
+}
+}
+
+@media (min-width: 684px) {
+.slider-caption {
+top: 50px;
+}
+}
+
+@media (min-width: 768px) {
+.logo_height {
+display: block;
+height: 40px;
+}
+#map_base svg {
+height: 350px;
+}
+.slider-caption {
+top: 135px;
+}
+}
+
+@media (min-width: 812px) {
+.logo_height {
+display: block;
+height: 50px;
+}
+}
+
+@media (min-width: 1024px) {
+.logo_height {
+display: block;
+height: 59px;
+}
+.slider-caption {
+top: 175px;
+}
+.e-numbers .em-box {
+background: linear-gradient(to bottom, #f7f7f7 0%, #ffffff 100%);
+border: 1px solid #d7d7d7;
+width: 100%;
+float: left;
+padding: 20px 25px;
+border-radius: 3px;
+height: 250px;
+}
+}
+@media (max-width: 1200px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    background: #fff;
+    height: 2px;
+    border-radius: 1px;
+}
+.logo-nav-row .navbar-nav>li>a {
+    padding: 10px 14px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #777777;
+    font-weight: 700;
+}
+.logo-nav-row .navbar-brand {
+    padding: 4px 0px;
+    height: inherit;
+    margin-right: 0px;
+}
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+    background: #097b39;
+    margin-top: 16px;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+
+  .navbar-brand {
+    display: inline-block;
+    float: none;
+  }
+
+  .navbar-form.form-inline {
+    display: inline-block;
+    border-color: transparent;
+    margin: 4px;
+    padding: 5px;
+  }
+
+  .navbar-form .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+   }
+
+}
+
+	</style>
+</head>
+<body style="background: rgb(238, 238, 238);">
+	<!--Wrapper Start-->
+	<div class="wrapper">
+		<!-- Page Footer Start -->
+    <section id="pageHeader"><header class="wf100">
+      <div class="logo-nav-row header" style="z-index: 999;padding:0px 20px;">
+        <div class="container-fluid">
+              <nav class="navbar">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="../index.html"><img class="logo_height" src="assets/images/logo1.png" alt=""></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background: #f7f7f7;">
+                  <ul class="nav navbar-nav text-right" style="float: right;">
+                    <li> <a class="" href="../index.html">Home </a> </li>
+                    <li><a class="" href="about-dld.html">About DLD </a> </li>
+                    <li><a class="" href="districtprofile.html">District Snapshots</a>
+                    </li><li><a class="" href="Spatialmap.html">Spatial maps</a> </li>
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="crops.html">Apportioned</a></li>
+                        <li><a class="UnapportionedLink" href="crops.html">Unapportioned</a></li>
+                        <li><a href="additional.html">Additional Data</a></li>
+                         <li><a href="visualization.html">Visualization</a></li>
+                      </ul>
+                    </li>
+                    <li> <a class="" href="definition_standard.html">Definitions And Standards </a> </li>
+                    <li> <a class="" href="support.html">Support </a> </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+      </div>
+  </header></section>
+    <!-- Page Footer End -->
+		<section class="container loader_body hidden">
+			<div class="col-md-12" style="text-align: center;">
+				<img src="./assets/images/spinner.gif" style="width:400px;margin:30px auto;">
+			</div>
+		</section>
+		<!--Main Content Start-->
+
+		<section class="container-fluid clearfix main_section mt-50  plr-20px">
+			<div id="main_content_outer" class="clearfix">
+				<div id="main_content">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="panel panel-default news-post" style="border:none;">
+								<div class="panel-body" style="padding-top:10px;">
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group pt-10">
+												<h6 class="text-left mb-10">Select  Categories</h6>
+												<select name="category" class="form-control category">
+													<option value="crops">Crops</option>
+													<option value="irrigation">Irrigation</option>
+													<option value="livestock">Livestock</option>
+													<option value="inputs">Inputs</option>
+													<option value="infrastructure">Infrastructure</option>
+													<option value="census">Census</option>
+													<option value="biophysical">Biophysical</option>
+													<option value="prices">Prices</option>
+													<option value="gdp">GDP</option>
+													<option value="environment">Environment</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="form-group pt-10 text-left">
+												<h6 class="text-left mb-10">Sub Category (<span class="categoryName">Crops</span>)
+												</h6>
+												<div class="fs-wrap" tabindex="0"><div class="fs-label-wrap"><div class="fs-label">Area production yield</div><span class="fs-arrow"></span></div><div class="fs-dropdown hidden"><div class="fs-search"><input type="text" placeholder="Search"></div><div class="fs-no-results hidden">No results found</div><div class="fs-options"><div class="fs-option selected g0" data-value="area-production-yield" data-index="0"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Area production yield</div></div><div class="fs-option g0" data-value="high-yielding-varieties" data-index="1"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">High yielding varieties</div></div></div></div><select name="subcategory" class="form-control subcategory text-left hidden"><option value="area-production-yield">Area production yield</option><option value="high-yielding-varieties">High yielding varieties</option></select></div>
+												<p class="text-danger error"></p>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="form-group text-center pt-15">
+												<!-- <h6 class="text-center mb-10"><strong>SELECT  CATEGORIES</strong></h6> -->
+												<label class="radio-inline pt-30">
+													<input type="radio" class="datatype" name="datatype" value="apportioned" checked="">Apportioned
+												</label>
+												<label class="radio-inline pt-30">
+													<input type="radio" class="datatype" name="datatype" value="unapportioned">Unapportioned
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="container-fluid clearfix main_section  plr-20px">
+			<div id="main_content_outer" class="clearfix">
+				<div id="main_content">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="panel panel-default news-post" style="border:none;">
+								<div class="panel-body">
+									<h2 class="categoryName head_style">Crops</h2>
+
+									<div class="description">
+										<!-- Crops Description -->
+										<div class="crops mt-10">District-wise yearly area, yield and production.
+											<span style="display: none;">
+												<p>This file group has two files: 1. Area, production and yield and 2. High yielding varieties The area, production yield file includes data on 20 major crops that include cereals, pulses, oilseeds, cotton, sugarcane, total fruits and vegetables. Yield is calculated based on area and production.</p>
+
+												<p>The data are for the annual area and production under the crops. The percent area under each crop is calculated by dividing crop area by Gross Cropped Area (GCA variable generated using a defined methodology).</p>
+
+												<p>For more details see definition and standards and in the data documentation manualthe section on ‘data clarification and anomalies’.</p>
+
+												<p>For season wise crop area and production data refer to season wise area and production of crops under additional data); for breakup of fruits and vegetables data by type also see files aon area and vegetables under additional data.</p>
+
+
+												<p>The second file is on High Yielding Varieties (HYV / hybrids) has data on area under HYVs for 5 major cereal crops. The data on HYVs has a number of gaps in recent years implying that the area is completely under HYVs and hence no longer reported / some states do not publish this data.</p>
+											</span>
+										<a href="javascript:void(0)" class="viewLimmiter more">.....Read More</a></div>
+										<!-- Irrigation Description -->
+										<div class="irrigation mt-20 hidden">District-wise yearly irrigated area.
+
+											<span>
+												<p>This file group has two files: 1. crop wise and 2. Source wise irrigation. Crop wise irrigated area includes gross irrigated area under selected cereal, pulses, oilseeds, cotton, sugarcane and total fruits &amp; vegetables. Crop wise irrigation by source is not available. A few states do not report data on crop wise irrigation.</p>
+
+												<p>The second file on source wise irrigation includes data on sources of irrigation (canals, tanks, wells etc.) for each district besides gross and net irrigated area. The file also provides data on percent area irrigated by different sources. A few states do not report data for different sources and hence data is available for net or gross irrigated area only.</p>
+											</span>
+
+										</div>
+										<!-- Livestock Description -->
+										<div class="livestock mt-20 hidden">
+											The file includes data on milk, meat and egg production.
+											<span>
+												<p></p>
+												<h6 class="pull-left">Milk production:</h6> The data are for total milk
+												production. Where ever brake ups are available production is separated
+												for cow, milk buffalo milk and goat milk. The data are further
+												disaggregated for crossbred and indigenous cows; murrah and indigenous
+												buffaloes.
+												<p></p>
+
+												<h6 class="pull-left">Meat production:</h6> The data are for total meat
+												production. Where ever break ups are available meat production is
+												separated by cattle, buffalo, goat, sheep, pig and poultry.
+												<p></p>
+
+												<h6 class="pull-left">Egg production:</h6> The data are for total egg
+												production. Where ever break ups are available the egg production is
+												given separately for improved and desi poultry.
+											</span>
+										</div>
+										<!-- Inputs Description -->
+										<div class="inputs mt-20 hidden">
+											<h6 class="pull-left">Fertilizer consumption:</h6> Data are for Nitrogen
+											(N), Potassium (P2O5), Potash (K2O) and total for all three.
+											<span>
+												<p></p>
+												<h6 class="pull-left">Seasonal fertilizer consumption:</h6> The
+												fertilizer consumption data are broken up for Kharif (rainy) and rabi
+												(post rainy) seasons.
+												<p></p>
+
+												<h6 class="pull-left">Wages:</h6> Field labor wages for male and female
+												labor. The file also has data at the state level for field labor wages.
+											</span>
+										</div>
+										<!-- Infrastructure Description -->
+										<div class="infrastructure mt-20 hidden">
+											Regulated market yards and their sub-yards, total road length that includes
+											state and national highways and district / village roads maintained by local
+											bodies like panchayats. Soft infrastructure related to number of commercial
+											bank branches, post offices, hospitals and public health centres.
+
+											<span>
+												<p></p>
+												<h6 class="pull-left">Veterinary institutions:</h6> Infrastructure
+												related to livestock, i.e., veterinary hospitals, dispensaries, AI
+												centres, poultry extension centres.
+											</span>
+										</div>
+										<!-- Census Description -->
+										<div class="census mt-20 hidden">
+											This group of files includes data on various censuses related to the
+											agriculture sector and population census.
+											<span>
+												<p></p>
+												<h6 class="pull-left">Agriculture implements:</h6> The census for
+												agriculture implements was part of the livestock census until 2003 and
+												is carried out every five years. Since then it was delinked from
+												livestock census and data are available until for 2007 only. For our
+												purposes we have included pump sets, power tillers and tractors only.
+												The census years vary a bit across states.
+												<p></p>
+
+												<h6 class="pull-left">Livestock:</h6> The census is carried out every
+												five years. We have included numbers on large ruminants, small
+												ruminants, other domestic animals and poultry. Cattle is also part of
+												the livestock census and provides data on cross bred and indigenous
+												cattle. The census years vary a bit across state.
+												<p></p>
+
+												<h6 class="pull-left">Operational holding:</h6> This census is carried
+												out under the agriculture census and is available every five years. The
+												data are on area and number of operational holdings by size of land
+												holding class i.e., marginal, small, medium, large. The census years
+												vary a bit across states.
+												<p></p>
+
+												<h6 class="pull-left">Population:</h6> Population census is carried out
+												every 10 years. The file includes data on total population, rural and
+												urban population, literates, agricultural workers, and cultivators all
+												separated for male and female categories.
+											</span>
+										</div>
+										<!-- Biophysical Description -->
+										<div class="biophysical mt-20 hidden">
+											<h6 class="pull-left">Land use:</h6> Includes data on geographical area, or
+											reporting area, further breakups for area under forests, non-agricultural
+											land, fallow land, net and gross cropped area.
+
+											<span>
+												<p></p>
+												<h6 class="pull-left">Length of growing period:</h6> The variable is in
+												number of days and is an indicator of the crop growing period in a given
+												district.
+												<p></p>
+
+												<h6 class="pull-left">Monthly actual Rainfall:</h6> Average rainfall
+												data at district level is obtained from secondary sources. The data are
+												averaged across raingauges in a given district.
+												<p></p>
+
+												<h6 class="pull-left">Soil Type:</h6> Data are for share of different
+												soil types in a given district
+											</span>
+										</div>
+										<!-- Prices Description -->
+										<div class="prices mt-20 hidden">
+											Also known as farm gate prices, are the prices prevailing at the time of
+											harvest in the place where the crop is harvested. The whole sale prices in a
+											nearby market will be 15 to 20% higher than FHP as it will include
+											transport, packing charges and wholesalers margin.
+										</div>
+										<!-- GDP Description -->
+										<div class="gdp mt-20 hidden">
+											Includes total Gross domestic product (GDP) and also by sectors i.e.,
+											primary sector, secondary sector (manufacturing) and tertiary sector
+											(services) at current and constant prices. The file also includes per capita
+											GDP at district level.
+										</div>
+										<!-- Environment Description -->
+										<div class="environment mt-20 hidden">
+											Estimating district level statistics from spatial data available from the
+											open data sources. Spatial data in NetCDf available at <a href="http://www.climatologylab.org/terraclimate.html" target="_blank">http://www.climatologylab.org/terraclimate.html</a> for
+											(Tmax, Tmin, Aet, Pet, Def, PPT, Q, SWE, WS) variables were downloaded.
+
+											<span>
+												<p></p>
+												<h6 class="pull-left">Process of conversion:</h6> NetCDF Data was
+												converted to Geotiff format using ArcGIS multidimensional tools. These
+												layers were aggregated to district level using the “Zonal Statistics as
+												table” tool in Spatial Analysis module. “Mean statistic is used to
+												aggregate the pixels to the district level. The data from 1958-2015 was
+												processed in batch mode to come-up with year-wise tables for each
+												variable at the country level. An R script was used to compile yearly
+												files to one Excel sheet.
+												<p></p>
+
+												<h6 class="pull-left">Actual Evapotranspiration (AET):</h6> Actual
+												amount of water lost to evapotranspiration from the soil– plant
+												continuum by an actively growing plant or crop. Water loss through
+												evapotranspiration depends upon plant and soil characteristics, and upon
+												the amount of available water in the soil.
+												<p></p>
+
+												<h6 class="pull-left">Potential Evapotranspiration (PET):</h6> The
+												amount of water evaporated (both as transpiration and evaporation from
+												the soil) from an area of continuous, uniform vegetation that covers the
+												whole ground and that is well supplied with water.
+												<p></p>
+
+												<h6 class="pull-left">Maximum temperature (TMax):</h6> The highest
+												temperature reported for a given location during a given period.
+												<p></p>
+
+												<h6 class="pull-left">Minimum temperature (TMIN):</h6> The lowest
+												temperature attained at a specific location during a specified period.
+												<p></p>
+
+												<h6 class="pull-left">Precipitation (PPT):</h6> "Precipitation" means
+												the condensation of atmospheric water vapour that falls under gravity.
+												<p></p>
+
+												<h6 class="pull-left">Runoff (Q):</h6> When rain or snow falls onto the
+												earth, it starts moving along the slopes. A portion of it seeps into the
+												soil and to replenish Earth's groundwater. Most of it flows downhill as
+												runoff when rainfall intensity is more than the seepage or infiltration.
+											</span>
+										</div>
+									</div>
+
+									<div class="row mt-20">
+										<div class="col-sm-3">
+											<div class="form-group">
+												<h6 class="text-left mb-10">
+													<input type="checkbox" class="selAllState">
+													 &nbsp; States
+												</h6>
+												<div class="fs-wrap multiple" tabindex="0"><div class="fs-label-wrap"><div class="fs-label">20 selected</div><span class="fs-arrow"></span></div><div class="fs-dropdown hidden"><div class="fs-search"><input type="text" placeholder="Search"></div><div class="fs-no-results hidden">No results found</div><div class="fs-options"><div class="fs-option selected g0" data-value="1" data-index="0"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Andhra Pradesh</div></div><div class="fs-option selected g0" data-value="17" data-index="1"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Assam</div></div><div class="fs-option selected g0" data-value="2" data-index="2"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bihar</div></div><div class="fs-option selected g0" data-value="14" data-index="3"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chhattisgarh</div></div><div class="fs-option selected g0" data-value="3" data-index="4"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Gujarat</div></div><div class="fs-option selected g0" data-value="4" data-index="5"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Haryana</div></div><div class="fs-option selected g0" data-value="18" data-index="6"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Himachal Pradesh</div></div><div class="fs-option selected g0" data-value="15" data-index="7"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jharkhand</div></div><div class="fs-option selected g0" data-value="5" data-index="8"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Karnataka</div></div><div class="fs-option selected g0" data-value="19" data-index="9"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kerala</div></div><div class="fs-option selected g0" data-value="6" data-index="10"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Madhya Pradesh</div></div><div class="fs-option selected g0" data-value="7" data-index="11"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Maharashtra</div></div><div class="fs-option selected g0" data-value="8" data-index="12"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Orissa</div></div><div class="fs-option selected g0" data-value="9" data-index="13"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Punjab</div></div><div class="fs-option selected g0" data-value="10" data-index="14"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Rajasthan</div></div><div class="fs-option selected g0" data-value="11" data-index="15"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Tamil Nadu</div></div><div class="fs-option selected g0" data-value="20" data-index="16"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Telangana</div></div><div class="fs-option selected g0" data-value="12" data-index="17"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Uttar Pradesh</div></div><div class="fs-option selected g0" data-value="16" data-index="18"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Uttarakhand</div></div><div class="fs-option selected g0" data-value="13" data-index="19"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">West Bengal</div></div></div></div><select name="states" class="form-control states hidden" multiple="multiple"><option value="1">Andhra Pradesh</option><option value="17">Assam</option><option value="2">Bihar</option><option value="14">Chhattisgarh</option><option value="3">Gujarat</option><option value="4">Haryana</option><option value="18">Himachal Pradesh</option><option value="15">Jharkhand</option><option value="5">Karnataka</option><option value="19">Kerala</option><option value="6">Madhya Pradesh</option><option value="7">Maharashtra</option><option value="8">Orissa</option><option value="9">Punjab</option><option value="10">Rajasthan</option><option value="11">Tamil Nadu</option><option value="20">Telangana</option><option value="12">Uttar Pradesh</option><option value="16">Uttarakhand</option><option value="13">West Bengal</option></select></div>
+												<p class="text-danger error"></p>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="form-group">
+												<h6 class="text-left mb-10">
+													<input type="checkbox" class="selAllDist">
+													&nbsp; Districts
+												</h6>
+												<div class="fs-wrap multiple" tabindex="0"><div class="fs-label-wrap"><div class="fs-label">314 selected</div><span class="fs-arrow"></span></div><div class="fs-dropdown hidden"><div class="fs-search"><input type="text" placeholder="Search"></div><div class="fs-no-results hidden">No results found</div><div class="fs-options"><div class="fs-optgroup-label" data-group="0">Andhra Pradesh</div><div class="fs-option selected g0" data-value="52" data-index="0"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ananthapur</div></div><div class="fs-option selected g0" data-value="54" data-index="1"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chittoor</div></div><div class="fs-option selected g0" data-value="46" data-index="2"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">East Godavari</div></div><div class="fs-option selected g0" data-value="49" data-index="3"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Guntur</div></div><div class="fs-option selected g0" data-value="53" data-index="4"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kadapa YSR</div></div><div class="fs-option selected g0" data-value="48" data-index="5"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Krishna</div></div><div class="fs-option selected g0" data-value="51" data-index="6"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kurnool</div></div><div class="fs-option selected g0" data-value="50" data-index="7"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">S.P.S. Nellore</div></div><div class="fs-option selected g0" data-value="44" data-index="8"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Srikakulam</div></div><div class="fs-option selected g0" data-value="45" data-index="9"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Visakhapatnam</div></div><div class="fs-option selected g0" data-value="47" data-index="10"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">West Godavari</div></div><div class="fs-optgroup-label" data-group="1">Assam</div><div class="fs-option selected g1" data-value="601" data-index="11"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Cachar</div></div><div class="fs-option selected g1" data-value="602" data-index="12"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Darrang</div></div><div class="fs-option selected g1" data-value="603" data-index="13"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Dibrugarh</div></div><div class="fs-option selected g1" data-value="604" data-index="14"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Goalpara</div></div><div class="fs-option selected g1" data-value="605" data-index="15"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kamrup</div></div><div class="fs-option selected g1" data-value="606" data-index="16"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Karbi Anglong</div></div><div class="fs-option selected g1" data-value="607" data-index="17"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Lakhimpur</div></div><div class="fs-option selected g1" data-value="609" data-index="18"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Nagaon</div></div><div class="fs-option selected g1" data-value="608" data-index="19"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">North Cachar Hil / Dima hasao</div></div><div class="fs-option selected g1" data-value="610" data-index="20"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sibsagar</div></div><div class="fs-optgroup-label" data-group="2">Bihar</div><div class="fs-option selected g2" data-value="909" data-index="21"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bhagalpur</div></div><div class="fs-option selected g2" data-value="901" data-index="22"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Champaran</div></div><div class="fs-option selected g2" data-value="903" data-index="23"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Darbhanga</div></div><div class="fs-option selected g2" data-value="912" data-index="24"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Gaya</div></div><div class="fs-option selected g2" data-value="908" data-index="25"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mungair</div></div><div class="fs-option selected g2" data-value="902" data-index="26"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Muzaffarpur</div></div><div class="fs-option selected g2" data-value="907" data-index="27"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Patna</div></div><div class="fs-option selected g2" data-value="905" data-index="28"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Purnea</div></div><div class="fs-option selected g2" data-value="904" data-index="29"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Saharsa</div></div><div class="fs-option selected g2" data-value="906" data-index="30"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Saran</div></div><div class="fs-option selected g2" data-value="911" data-index="31"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Shahabad (now part of Bhojpur district)</div></div><div class="fs-optgroup-label" data-group="3">Chhattisgarh</div><div class="fs-option selected g3" data-value="2" data-index="32"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bastar</div></div><div class="fs-option selected g3" data-value="4" data-index="33"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bilaspur</div></div><div class="fs-option selected g3" data-value="1" data-index="34"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Durg</div></div><div class="fs-option selected g3" data-value="5" data-index="35"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Raigarh</div></div><div class="fs-option selected g3" data-value="3" data-index="36"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Raipur</div></div><div class="fs-option selected g3" data-value="6" data-index="37"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Surguja</div></div><div class="fs-optgroup-label" data-group="4">Gujarat</div><div class="fs-option selected g4" data-value="121" data-index="38"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ahmedabad</div></div><div class="fs-option selected g4" data-value="122" data-index="39"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Amreli</div></div><div class="fs-option selected g4" data-value="123" data-index="40"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Banaskantha</div></div><div class="fs-option selected g4" data-value="124" data-index="41"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bharuch</div></div><div class="fs-option selected g4" data-value="126" data-index="42"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bhavnagar</div></div><div class="fs-option selected g4" data-value="128" data-index="43"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Dangs</div></div><div class="fs-option selected g4" data-value="129" data-index="44"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jamnagar</div></div><div class="fs-option selected g4" data-value="130" data-index="45"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Junagadh</div></div><div class="fs-option selected g4" data-value="131" data-index="46"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kheda</div></div><div class="fs-option selected g4" data-value="132" data-index="47"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kutch</div></div><div class="fs-option selected g4" data-value="133" data-index="48"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mehsana</div></div><div class="fs-option selected g4" data-value="134" data-index="49"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Panchmahal</div></div><div class="fs-option selected g4" data-value="135" data-index="50"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Rajkot</div></div><div class="fs-option selected g4" data-value="136" data-index="51"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sabarkantha</div></div><div class="fs-option selected g4" data-value="137" data-index="52"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Surat</div></div><div class="fs-option selected g4" data-value="138" data-index="53"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Surendranagar</div></div><div class="fs-option selected g4" data-value="125" data-index="54"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Vadodara / Baroda</div></div><div class="fs-option selected g4" data-value="127" data-index="55"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Valsad</div></div><div class="fs-optgroup-label" data-group="5">Haryana</div><div class="fs-option selected g5" data-value="183" data-index="56"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ambala</div></div><div class="fs-option selected g5" data-value="180" data-index="57"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Gurgaon</div></div><div class="fs-option selected g5" data-value="177" data-index="58"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Hissar</div></div><div class="fs-option selected g5" data-value="181" data-index="59"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jind</div></div><div class="fs-option selected g5" data-value="184" data-index="60"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Karnal</div></div><div class="fs-option selected g5" data-value="182" data-index="61"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mahendragarh / Narnaul</div></div><div class="fs-option selected g5" data-value="186" data-index="62"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Rohtak</div></div><div class="fs-optgroup-label" data-group="6">Himachal Pradesh</div><div class="fs-option selected g6" data-value="626" data-index="63"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bilashpur</div></div><div class="fs-option selected g6" data-value="627" data-index="64"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chamba</div></div><div class="fs-option selected g6" data-value="629" data-index="65"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kangra</div></div><div class="fs-option selected g6" data-value="630" data-index="66"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kinnaur</div></div><div class="fs-option selected g6" data-value="631" data-index="67"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kullu</div></div><div class="fs-option selected g6" data-value="632" data-index="68"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Lahul &amp; Spiti</div></div><div class="fs-option selected g6" data-value="634" data-index="69"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mandi</div></div><div class="fs-option selected g6" data-value="635" data-index="70"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Shimla</div></div><div class="fs-option selected g6" data-value="636" data-index="71"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sirmaur</div></div><div class="fs-option selected g6" data-value="633" data-index="72"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Solan</div></div><div class="fs-optgroup-label" data-group="7">Jharkhand</div><div class="fs-option selected g7" data-value="914" data-index="73"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Dhanbad</div></div><div class="fs-option selected g7" data-value="913" data-index="74"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Hazaribagh</div></div><div class="fs-option selected g7" data-value="915" data-index="75"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Palamau</div></div><div class="fs-option selected g7" data-value="916" data-index="76"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ranchi</div></div><div class="fs-option selected g7" data-value="910" data-index="77"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Santhal Paragana / Dumka</div></div><div class="fs-option selected g7" data-value="917" data-index="78"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Singhbhum</div></div><div class="fs-optgroup-label" data-group="8">Karnataka</div><div class="fs-option selected g8" data-value="64" data-index="79"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bangalore</div></div><div class="fs-option selected g8" data-value="75" data-index="80"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Belgaum</div></div><div class="fs-option selected g8" data-value="73" data-index="81"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bellary</div></div><div class="fs-option selected g8" data-value="77" data-index="82"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bidar</div></div><div class="fs-option selected g8" data-value="76" data-index="83"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bijapur / Vijayapura</div></div><div class="fs-option selected g8" data-value="71" data-index="84"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chickmagalur</div></div><div class="fs-option selected g8" data-value="72" data-index="85"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chitradurga</div></div><div class="fs-option selected g8" data-value="80" data-index="86"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Dakshina Kannada</div></div><div class="fs-option selected g8" data-value="74" data-index="87"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Dharwad</div></div><div class="fs-option selected g8" data-value="79" data-index="88"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Gulbarga / Kalaburagi</div></div><div class="fs-option selected g8" data-value="69" data-index="89"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Hassan</div></div><div class="fs-option selected g8" data-value="82" data-index="90"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kodagu / Coorg</div></div><div class="fs-option selected g8" data-value="65" data-index="91"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kolar</div></div><div class="fs-option selected g8" data-value="68" data-index="92"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mandya</div></div><div class="fs-option selected g8" data-value="67" data-index="93"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mysore</div></div><div class="fs-option selected g8" data-value="78" data-index="94"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Raichur</div></div><div class="fs-option selected g8" data-value="70" data-index="95"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Shimoge</div></div><div class="fs-option selected g8" data-value="66" data-index="96"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Tumkur</div></div><div class="fs-option selected g8" data-value="81" data-index="97"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Uttara Kannada</div></div><div class="fs-optgroup-label" data-group="9">Kerala</div><div class="fs-option selected g9" data-value="651" data-index="98"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Alappuzha</div></div><div class="fs-option selected g9" data-value="653" data-index="99"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Eranakulam</div></div><div class="fs-option selected g9" data-value="652" data-index="100"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kannur</div></div><div class="fs-option selected g9" data-value="659" data-index="101"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kollam</div></div><div class="fs-option selected g9" data-value="655" data-index="102"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kottayam</div></div><div class="fs-option selected g9" data-value="656" data-index="103"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kozhikode</div></div><div class="fs-option selected g9" data-value="657" data-index="104"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Malappuram</div></div><div class="fs-option selected g9" data-value="658" data-index="105"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Palakkad</div></div><div class="fs-option selected g9" data-value="661" data-index="106"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Thiruvananthapuram</div></div><div class="fs-option selected g9" data-value="660" data-index="107"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Thrissur</div></div><div class="fs-optgroup-label" data-group="10">Madhya Pradesh</div><div class="fs-option selected g10" data-value="8" data-index="108"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Balaghat</div></div><div class="fs-option selected g10" data-value="40" data-index="109"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Betul</div></div><div class="fs-option selected g10" data-value="27" data-index="110"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bhind</div></div><div class="fs-option selected g10" data-value="16" data-index="111"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chhatarpur</div></div><div class="fs-option selected g10" data-value="9" data-index="112"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chhindwara</div></div><div class="fs-option selected g10" data-value="14" data-index="113"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Damoh</div></div><div class="fs-option selected g10" data-value="25" data-index="114"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Datia</div></div><div class="fs-option selected g10" data-value="32" data-index="115"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Dewas</div></div><div class="fs-option selected g10" data-value="33" data-index="116"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Dhar</div></div><div class="fs-option selected g10" data-value="24" data-index="117"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Guna</div></div><div class="fs-option selected g10" data-value="22" data-index="118"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Gwalior</div></div><div class="fs-option selected g10" data-value="43" data-index="119"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Hoshangabad</div></div><div class="fs-option selected g10" data-value="28" data-index="120"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Indore</div></div><div class="fs-option selected g10" data-value="7" data-index="121"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jabalpur</div></div><div class="fs-option selected g10" data-value="34" data-index="122"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jhabua</div></div><div class="fs-option selected g10" data-value="36" data-index="123"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Khandwa / East Nimar</div></div><div class="fs-option selected g10" data-value="35" data-index="124"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Khargone / West Nimar</div></div><div class="fs-option selected g10" data-value="12" data-index="125"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mandla</div></div><div class="fs-option selected g10" data-value="31" data-index="126"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mandsaur</div></div><div class="fs-option selected g10" data-value="26" data-index="127"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Morena</div></div><div class="fs-option selected g10" data-value="10" data-index="128"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Narsinghpur</div></div><div class="fs-option selected g10" data-value="17" data-index="129"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Panna</div></div><div class="fs-option selected g10" data-value="38" data-index="130"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Raisen</div></div><div class="fs-option selected g10" data-value="41" data-index="131"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Rajgarh</div></div><div class="fs-option selected g10" data-value="29" data-index="132"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ratlam</div></div><div class="fs-option selected g10" data-value="18" data-index="133"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Rewa</div></div><div class="fs-option selected g10" data-value="13" data-index="134"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sagar</div></div><div class="fs-option selected g10" data-value="20" data-index="135"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Satna</div></div><div class="fs-option selected g10" data-value="37" data-index="136"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sehore</div></div><div class="fs-option selected g10" data-value="11" data-index="137"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Seoni / Shivani</div></div><div class="fs-option selected g10" data-value="21" data-index="138"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Shahdol</div></div><div class="fs-option selected g10" data-value="42" data-index="139"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Shajapur</div></div><div class="fs-option selected g10" data-value="23" data-index="140"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Shivpuri</div></div><div class="fs-option selected g10" data-value="19" data-index="141"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sidhi</div></div><div class="fs-option selected g10" data-value="15" data-index="142"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Tikamgarh</div></div><div class="fs-option selected g10" data-value="30" data-index="143"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ujjain</div></div><div class="fs-option selected g10" data-value="39" data-index="144"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Vidisha</div></div><div class="fs-optgroup-label" data-group="11">Maharashtra</div><div class="fs-option selected g11" data-value="102" data-index="145"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ahmednagar</div></div><div class="fs-option selected g11" data-value="114" data-index="146"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Akola</div></div><div class="fs-option selected g11" data-value="115" data-index="147"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Amarawati</div></div><div class="fs-option selected g11" data-value="108" data-index="148"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Aurangabad</div></div><div class="fs-option selected g11" data-value="110" data-index="149"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Beed</div></div><div class="fs-option selected g11" data-value="119" data-index="150"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bhandara</div></div><div class="fs-option selected g11" data-value="95" data-index="151"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bombay </div></div><div class="fs-option selected g11" data-value="113" data-index="152"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Buldhana</div></div><div class="fs-option selected g11" data-value="120" data-index="153"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chandrapur</div></div><div class="fs-option selected g11" data-value="100" data-index="154"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Dhule</div></div><div class="fs-option selected g11" data-value="101" data-index="155"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jalgaon</div></div><div class="fs-option selected g11" data-value="107" data-index="156"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kolhapur</div></div><div class="fs-option selected g11" data-value="118" data-index="157"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Nagpur</div></div><div class="fs-option selected g11" data-value="111" data-index="158"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Nanded</div></div><div class="fs-option selected g11" data-value="99" data-index="159"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Nasik</div></div><div class="fs-option selected g11" data-value="112" data-index="160"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Osmanabad</div></div><div class="fs-option selected g11" data-value="109" data-index="161"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Parbhani</div></div><div class="fs-option selected g11" data-value="103" data-index="162"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Pune</div></div><div class="fs-option selected g11" data-value="97" data-index="163"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Raigad</div></div><div class="fs-option selected g11" data-value="98" data-index="164"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ratnagiri</div></div><div class="fs-option selected g11" data-value="105" data-index="165"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sangli</div></div><div class="fs-option selected g11" data-value="104" data-index="166"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Satara</div></div><div class="fs-option selected g11" data-value="106" data-index="167"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Solapur</div></div><div class="fs-option selected g11" data-value="96" data-index="168"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Thane</div></div><div class="fs-option selected g11" data-value="117" data-index="169"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Wardha</div></div><div class="fs-option selected g11" data-value="116" data-index="170"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Yeotmal</div></div><div class="fs-optgroup-label" data-group="12">Orissa</div><div class="fs-option selected g12" data-value="701" data-index="171"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Balasore</div></div><div class="fs-option selected g12" data-value="702" data-index="172"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bolangir</div></div><div class="fs-option selected g12" data-value="703" data-index="173"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Cuttack</div></div><div class="fs-option selected g12" data-value="704" data-index="174"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Dhenkanal</div></div><div class="fs-option selected g12" data-value="705" data-index="175"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ganjam</div></div><div class="fs-option selected g12" data-value="706" data-index="176"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kalahandi</div></div><div class="fs-option selected g12" data-value="707" data-index="177"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Keonjhar</div></div><div class="fs-option selected g12" data-value="708" data-index="178"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Koraput</div></div><div class="fs-option selected g12" data-value="709" data-index="179"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mayurbhanja</div></div><div class="fs-option selected g12" data-value="710" data-index="180"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Phulbani ( Kandhamal )</div></div><div class="fs-option selected g12" data-value="711" data-index="181"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Puri</div></div><div class="fs-option selected g12" data-value="712" data-index="182"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sambalpur</div></div><div class="fs-option selected g12" data-value="713" data-index="183"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sundargarh</div></div><div class="fs-optgroup-label" data-group="13">Punjab</div><div class="fs-option selected g13" data-value="166" data-index="184"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Amritsar</div></div><div class="fs-option selected g13" data-value="174" data-index="185"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bhatinda</div></div><div class="fs-option selected g13" data-value="172" data-index="186"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ferozpur</div></div><div class="fs-option selected g13" data-value="165" data-index="187"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Gurdaspur</div></div><div class="fs-option selected g13" data-value="169" data-index="188"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Hoshiarpur</div></div><div class="fs-option selected g13" data-value="168" data-index="189"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jalandhar</div></div><div class="fs-option selected g13" data-value="167" data-index="190"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kapurthala</div></div><div class="fs-option selected g13" data-value="171" data-index="191"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ludhiana</div></div><div class="fs-option selected g13" data-value="176" data-index="192"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Patiala</div></div><div class="fs-option selected g13" data-value="170" data-index="193"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Roopnagar / Ropar</div></div><div class="fs-option selected g13" data-value="175" data-index="194"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sangrur</div></div><div class="fs-optgroup-label" data-group="14">Rajasthan</div><div class="fs-option selected g14" data-value="139" data-index="195"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ajmer</div></div><div class="fs-option selected g14" data-value="140" data-index="196"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Alwar</div></div><div class="fs-option selected g14" data-value="141" data-index="197"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Banswara</div></div><div class="fs-option selected g14" data-value="142" data-index="198"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Barmer</div></div><div class="fs-option selected g14" data-value="143" data-index="199"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bharatpur</div></div><div class="fs-option selected g14" data-value="144" data-index="200"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bhilwara</div></div><div class="fs-option selected g14" data-value="145" data-index="201"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bikaner</div></div><div class="fs-option selected g14" data-value="146" data-index="202"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bundi</div></div><div class="fs-option selected g14" data-value="147" data-index="203"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chittorgarh</div></div><div class="fs-option selected g14" data-value="148" data-index="204"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Churu</div></div><div class="fs-option selected g14" data-value="149" data-index="205"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Dungarpur</div></div><div class="fs-option selected g14" data-value="150" data-index="206"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ganganagar</div></div><div class="fs-option selected g14" data-value="151" data-index="207"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jaipur</div></div><div class="fs-option selected g14" data-value="152" data-index="208"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jaisalmer</div></div><div class="fs-option selected g14" data-value="153" data-index="209"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jalore</div></div><div class="fs-option selected g14" data-value="154" data-index="210"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jhalawar</div></div><div class="fs-option selected g14" data-value="155" data-index="211"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jhunjhunu</div></div><div class="fs-option selected g14" data-value="156" data-index="212"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jodhpur</div></div><div class="fs-option selected g14" data-value="157" data-index="213"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kota</div></div><div class="fs-option selected g14" data-value="158" data-index="214"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Nagaur</div></div><div class="fs-option selected g14" data-value="159" data-index="215"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Pali</div></div><div class="fs-option selected g14" data-value="161" data-index="216"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sikar</div></div><div class="fs-option selected g14" data-value="162" data-index="217"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sirohi</div></div><div class="fs-option selected g14" data-value="160" data-index="218"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Swami Madhopur</div></div><div class="fs-option selected g14" data-value="163" data-index="219"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Tonk</div></div><div class="fs-option selected g14" data-value="164" data-index="220"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Udaipur</div></div><div class="fs-optgroup-label" data-group="15">Tamil Nadu</div><div class="fs-option selected g15" data-value="83" data-index="221"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chengalpattu MGR / Kanchipuram</div></div><div class="fs-option selected g15" data-value="999" data-index="222"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chennai</div></div><div class="fs-option selected g15" data-value="87" data-index="223"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Coimbatore</div></div><div class="fs-option selected g15" data-value="94" data-index="224"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kanyakumari</div></div><div class="fs-option selected g15" data-value="90" data-index="225"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Madurai</div></div><div class="fs-option selected g15" data-value="85" data-index="226"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">North Arcot / Vellore</div></div><div class="fs-option selected g15" data-value="91" data-index="227"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ramananthapuram</div></div><div class="fs-option selected g15" data-value="86" data-index="228"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Salem</div></div><div class="fs-option selected g15" data-value="84" data-index="229"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">South Arcot / Cuddalore</div></div><div class="fs-option selected g15" data-value="89" data-index="230"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Thanjavur</div></div><div class="fs-option selected g15" data-value="93" data-index="231"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">The Nilgiris</div></div><div class="fs-option selected g15" data-value="92" data-index="232"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Thirunelveli</div></div><div class="fs-option selected g15" data-value="88" data-index="233"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Tiruchirapalli / Trichy</div></div><div class="fs-optgroup-label" data-group="16">Telangana</div><div class="fs-option selected g16" data-value="63" data-index="234"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Adilabad</div></div><div class="fs-option selected g16" data-value="55" data-index="235"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Hyderabad</div></div><div class="fs-option selected g16" data-value="62" data-index="236"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Karimnagar</div></div><div class="fs-option selected g16" data-value="61" data-index="237"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Khammam</div></div><div class="fs-option selected g16" data-value="58" data-index="238"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mahabubnagar</div></div><div class="fs-option selected g16" data-value="57" data-index="239"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Medak</div></div><div class="fs-option selected g16" data-value="59" data-index="240"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Nalgonda</div></div><div class="fs-option selected g16" data-value="56" data-index="241"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Nizamabad</div></div><div class="fs-option selected g16" data-value="520" data-index="242"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Rangareddy</div></div><div class="fs-option selected g16" data-value="60" data-index="243"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Warangal</div></div><div class="fs-optgroup-label" data-group="17">Uttar Pradesh</div><div class="fs-option selected g17" data-value="196" data-index="244"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Agra</div></div><div class="fs-option selected g17" data-value="194" data-index="245"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Aligarh</div></div><div class="fs-option selected g17" data-value="210" data-index="246"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Allahabad</div></div><div class="fs-option selected g17" data-value="224" data-index="247"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Azamgarh</div></div><div class="fs-option selected g17" data-value="233" data-index="248"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bahraich</div></div><div class="fs-option selected g17" data-value="220" data-index="249"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ballia</div></div><div class="fs-option selected g17" data-value="215" data-index="250"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Banda</div></div><div class="fs-option selected g17" data-value="236" data-index="251"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Barabanki</div></div><div class="fs-option selected g17" data-value="199" data-index="252"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bareilly</div></div><div class="fs-option selected g17" data-value="223" data-index="253"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Basti</div></div><div class="fs-option selected g17" data-value="205" data-index="254"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bijnor</div></div><div class="fs-option selected g17" data-value="200" data-index="255"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Budaun</div></div><div class="fs-option selected g17" data-value="192" data-index="256"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Buland Shahar</div></div><div class="fs-option selected g17" data-value="222" data-index="257"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Deoria</div></div><div class="fs-option selected g17" data-value="198" data-index="258"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Etah</div></div><div class="fs-option selected g17" data-value="207" data-index="259"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Etawah</div></div><div class="fs-option selected g17" data-value="231" data-index="260"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Faizabad</div></div><div class="fs-option selected g17" data-value="206" data-index="261"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Farrukhabad</div></div><div class="fs-option selected g17" data-value="209" data-index="262"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Fatehpur</div></div><div class="fs-option selected g17" data-value="219" data-index="263"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Ghazipur</div></div><div class="fs-option selected g17" data-value="232" data-index="264"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Gonda</div></div><div class="fs-option selected g17" data-value="221" data-index="265"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Gorakhpur</div></div><div class="fs-option selected g17" data-value="214" data-index="266"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Hamirpur</div></div><div class="fs-option selected g17" data-value="229" data-index="267"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Hardoi</div></div><div class="fs-option selected g17" data-value="213" data-index="268"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jalaun</div></div><div class="fs-option selected g17" data-value="218" data-index="269"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jaunpur</div></div><div class="fs-option selected g17" data-value="211" data-index="270"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jhansi</div></div><div class="fs-option selected g17" data-value="208" data-index="271"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kanpur</div></div><div class="fs-option selected g17" data-value="230" data-index="272"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kheri</div></div><div class="fs-option selected g17" data-value="225" data-index="273"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Lucknow</div></div><div class="fs-option selected g17" data-value="197" data-index="274"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mainpuri</div></div><div class="fs-option selected g17" data-value="195" data-index="275"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mathura</div></div><div class="fs-option selected g17" data-value="191" data-index="276"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Meerut</div></div><div class="fs-option selected g17" data-value="217" data-index="277"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Mirzpur</div></div><div class="fs-option selected g17" data-value="201" data-index="278"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Moradabad</div></div><div class="fs-option selected g17" data-value="190" data-index="279"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Muzaffarnagar</div></div><div class="fs-option selected g17" data-value="203" data-index="280"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Pilibhit</div></div><div class="fs-option selected g17" data-value="235" data-index="281"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Pratapgarh</div></div><div class="fs-option selected g17" data-value="227" data-index="282"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Rae-Bareily</div></div><div class="fs-option selected g17" data-value="204" data-index="283"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Rampur</div></div><div class="fs-option selected g17" data-value="189" data-index="284"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Saharanpur</div></div><div class="fs-option selected g17" data-value="202" data-index="285"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Shahjahanpur</div></div><div class="fs-option selected g17" data-value="228" data-index="286"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sitapur</div></div><div class="fs-option selected g17" data-value="234" data-index="287"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Sultanpur</div></div><div class="fs-option selected g17" data-value="226" data-index="288"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Unnao</div></div><div class="fs-option selected g17" data-value="216" data-index="289"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Varanasi</div></div><div class="fs-optgroup-label" data-group="18">Uttarakhand</div><div class="fs-option selected g18" data-value="238" data-index="290"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Almorah</div></div><div class="fs-option selected g18" data-value="240" data-index="291"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Chamoli</div></div><div class="fs-option selected g18" data-value="244" data-index="292"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Dehradun</div></div><div class="fs-option selected g18" data-value="243" data-index="293"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Garhwal</div></div><div class="fs-option selected g18" data-value="237" data-index="294"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Nainital</div></div><div class="fs-option selected g18" data-value="239" data-index="295"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Pithorgarh</div></div><div class="fs-option selected g18" data-value="242" data-index="296"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Tehri Garhwal</div></div><div class="fs-option selected g18" data-value="241" data-index="297"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Uttar Kashi</div></div><div class="fs-optgroup-label" data-group="19">West Bengal</div><div class="fs-option selected g19" data-value="800" data-index="298"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">24 Parganas</div></div><div class="fs-option selected g19" data-value="807" data-index="299"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Bankura</div></div><div class="fs-option selected g19" data-value="806" data-index="300"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Birbhum</div></div><div class="fs-option selected g19" data-value="805" data-index="301"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Burdwan</div></div><div class="fs-option selected g19" data-value="816" data-index="302"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Cooch Behar</div></div><div class="fs-option selected g19" data-value="813" data-index="303"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Darjeeling</div></div><div class="fs-option selected g19" data-value="810" data-index="304"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Hooghly</div></div><div class="fs-option selected g19" data-value="811" data-index="305"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Howrah</div></div><div class="fs-option selected g19" data-value="812" data-index="306"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Jalpaiguri</div></div><div class="fs-option selected g19" data-value="821" data-index="307"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Kolkata</div></div><div class="fs-option selected g19" data-value="814" data-index="308"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Malda</div></div><div class="fs-option selected g19" data-value="818" data-index="309"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Midnapur</div></div><div class="fs-option selected g19" data-value="804" data-index="310"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Murshidabad</div></div><div class="fs-option selected g19" data-value="803" data-index="311"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Nadia</div></div><div class="fs-option selected g19" data-value="817" data-index="312"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">Purulia</div></div><div class="fs-option selected g19" data-value="822" data-index="313"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">West Dinajpur</div></div></div></div><select name="dists" class="form-control dists hidden" multiple="multiple"><optgroup label="Andhra Pradesh"><option value="52">Ananthapur</option><option value="54">Chittoor</option><option value="46">East Godavari</option><option value="49">Guntur</option><option value="53">Kadapa YSR</option><option value="48">Krishna</option><option value="51">Kurnool</option><option value="50">S.P.S. Nellore</option><option value="44">Srikakulam</option><option value="45">Visakhapatnam</option><option value="47">West Godavari</option></optgroup><optgroup label="Assam"><option value="601">Cachar</option><option value="602">Darrang</option><option value="603">Dibrugarh</option><option value="604">Goalpara</option><option value="605">Kamrup</option><option value="606">Karbi Anglong</option><option value="607">Lakhimpur</option><option value="609">Nagaon</option><option value="608">North Cachar Hil / Dima hasao</option><option value="610">Sibsagar</option></optgroup><optgroup label="Bihar"><option value="909">Bhagalpur</option><option value="901">Champaran</option><option value="903">Darbhanga</option><option value="912">Gaya</option><option value="908">Mungair</option><option value="902">Muzaffarpur</option><option value="907">Patna</option><option value="905">Purnea</option><option value="904">Saharsa</option><option value="906">Saran</option><option value="911">Shahabad (now part of Bhojpur district)</option></optgroup><optgroup label="Chhattisgarh"><option value="2">Bastar</option><option value="4">Bilaspur</option><option value="1">Durg</option><option value="5">Raigarh</option><option value="3">Raipur</option><option value="6">Surguja</option></optgroup><optgroup label="Gujarat"><option value="121">Ahmedabad</option><option value="122">Amreli</option><option value="123">Banaskantha</option><option value="124">Bharuch</option><option value="126">Bhavnagar</option><option value="128">Dangs</option><option value="129">Jamnagar</option><option value="130">Junagadh</option><option value="131">Kheda</option><option value="132">Kutch</option><option value="133">Mehsana</option><option value="134">Panchmahal</option><option value="135">Rajkot</option><option value="136">Sabarkantha</option><option value="137">Surat</option><option value="138">Surendranagar</option><option value="125">Vadodara / Baroda</option><option value="127">Valsad</option></optgroup><optgroup label="Haryana"><option value="183">Ambala</option><option value="180">Gurgaon</option><option value="177">Hissar</option><option value="181">Jind</option><option value="184">Karnal</option><option value="182">Mahendragarh / Narnaul</option><option value="186">Rohtak</option></optgroup><optgroup label="Himachal Pradesh"><option value="626">Bilashpur</option><option value="627">Chamba</option><option value="629">Kangra</option><option value="630">Kinnaur</option><option value="631">Kullu</option><option value="632">Lahul &amp; Spiti</option><option value="634">Mandi</option><option value="635">Shimla</option><option value="636">Sirmaur</option><option value="633">Solan</option></optgroup><optgroup label="Jharkhand"><option value="914">Dhanbad</option><option value="913">Hazaribagh</option><option value="915">Palamau</option><option value="916">Ranchi</option><option value="910">Santhal Paragana / Dumka</option><option value="917">Singhbhum</option></optgroup><optgroup label="Karnataka"><option value="64">Bangalore</option><option value="75">Belgaum</option><option value="73">Bellary</option><option value="77">Bidar</option><option value="76">Bijapur / Vijayapura</option><option value="71">Chickmagalur</option><option value="72">Chitradurga</option><option value="80">Dakshina Kannada</option><option value="74">Dharwad</option><option value="79">Gulbarga / Kalaburagi</option><option value="69">Hassan</option><option value="82">Kodagu / Coorg</option><option value="65">Kolar</option><option value="68">Mandya</option><option value="67">Mysore</option><option value="78">Raichur</option><option value="70">Shimoge</option><option value="66">Tumkur</option><option value="81">Uttara Kannada</option></optgroup><optgroup label="Kerala"><option value="651">Alappuzha</option><option value="653">Eranakulam</option><option value="652">Kannur</option><option value="659">Kollam</option><option value="655">Kottayam</option><option value="656">Kozhikode</option><option value="657">Malappuram</option><option value="658">Palakkad</option><option value="661">Thiruvananthapuram</option><option value="660">Thrissur</option></optgroup><optgroup label="Madhya Pradesh"><option value="8">Balaghat</option><option value="40">Betul</option><option value="27">Bhind</option><option value="16">Chhatarpur</option><option value="9">Chhindwara</option><option value="14">Damoh</option><option value="25">Datia</option><option value="32">Dewas</option><option value="33">Dhar</option><option value="24">Guna</option><option value="22">Gwalior</option><option value="43">Hoshangabad</option><option value="28">Indore</option><option value="7">Jabalpur</option><option value="34">Jhabua</option><option value="36">Khandwa / East Nimar</option><option value="35">Khargone / West Nimar</option><option value="12">Mandla</option><option value="31">Mandsaur</option><option value="26">Morena</option><option value="10">Narsinghpur</option><option value="17">Panna</option><option value="38">Raisen</option><option value="41">Rajgarh</option><option value="29">Ratlam</option><option value="18">Rewa</option><option value="13">Sagar</option><option value="20">Satna</option><option value="37">Sehore</option><option value="11">Seoni / Shivani</option><option value="21">Shahdol</option><option value="42">Shajapur</option><option value="23">Shivpuri</option><option value="19">Sidhi</option><option value="15">Tikamgarh</option><option value="30">Ujjain</option><option value="39">Vidisha</option></optgroup><optgroup label="Maharashtra"><option value="102">Ahmednagar</option><option value="114">Akola</option><option value="115">Amarawati</option><option value="108">Aurangabad</option><option value="110">Beed</option><option value="119">Bhandara</option><option value="95">Bombay </option><option value="113">Buldhana</option><option value="120">Chandrapur</option><option value="100">Dhule</option><option value="101">Jalgaon</option><option value="107">Kolhapur</option><option value="118">Nagpur</option><option value="111">Nanded</option><option value="99">Nasik</option><option value="112">Osmanabad</option><option value="109">Parbhani</option><option value="103">Pune</option><option value="97">Raigad</option><option value="98">Ratnagiri</option><option value="105">Sangli</option><option value="104">Satara</option><option value="106">Solapur</option><option value="96">Thane</option><option value="117">Wardha</option><option value="116">Yeotmal</option></optgroup><optgroup label="Orissa"><option value="701">Balasore</option><option value="702">Bolangir</option><option value="703">Cuttack</option><option value="704">Dhenkanal</option><option value="705">Ganjam</option><option value="706">Kalahandi</option><option value="707">Keonjhar</option><option value="708">Koraput</option><option value="709">Mayurbhanja</option><option value="710">Phulbani ( Kandhamal )</option><option value="711">Puri</option><option value="712">Sambalpur</option><option value="713">Sundargarh</option></optgroup><optgroup label="Punjab"><option value="166">Amritsar</option><option value="174">Bhatinda</option><option value="172">Ferozpur</option><option value="165">Gurdaspur</option><option value="169">Hoshiarpur</option><option value="168">Jalandhar</option><option value="167">Kapurthala</option><option value="171">Ludhiana</option><option value="176">Patiala</option><option value="170">Roopnagar / Ropar</option><option value="175">Sangrur</option></optgroup><optgroup label="Rajasthan"><option value="139">Ajmer</option><option value="140">Alwar</option><option value="141">Banswara</option><option value="142">Barmer</option><option value="143">Bharatpur</option><option value="144">Bhilwara</option><option value="145">Bikaner</option><option value="146">Bundi</option><option value="147">Chittorgarh</option><option value="148">Churu</option><option value="149">Dungarpur</option><option value="150">Ganganagar</option><option value="151">Jaipur</option><option value="152">Jaisalmer</option><option value="153">Jalore</option><option value="154">Jhalawar</option><option value="155">Jhunjhunu</option><option value="156">Jodhpur</option><option value="157">Kota</option><option value="158">Nagaur</option><option value="159">Pali</option><option value="161">Sikar</option><option value="162">Sirohi</option><option value="160">Swami Madhopur</option><option value="163">Tonk</option><option value="164">Udaipur</option></optgroup><optgroup label="Tamil Nadu"><option value="83">Chengalpattu MGR / Kanchipuram</option><option value="999">Chennai</option><option value="87">Coimbatore</option><option value="94">Kanyakumari</option><option value="90">Madurai</option><option value="85">North Arcot / Vellore</option><option value="91">Ramananthapuram</option><option value="86">Salem</option><option value="84">South Arcot / Cuddalore</option><option value="89">Thanjavur</option><option value="93">The Nilgiris</option><option value="92">Thirunelveli</option><option value="88">Tiruchirapalli / Trichy</option></optgroup><optgroup label="Telangana"><option value="63">Adilabad</option><option value="55">Hyderabad</option><option value="62">Karimnagar</option><option value="61">Khammam</option><option value="58">Mahabubnagar</option><option value="57">Medak</option><option value="59">Nalgonda</option><option value="56">Nizamabad</option><option value="520">Rangareddy</option><option value="60">Warangal</option></optgroup><optgroup label="Uttar Pradesh"><option value="196">Agra</option><option value="194">Aligarh</option><option value="210">Allahabad</option><option value="224">Azamgarh</option><option value="233">Bahraich</option><option value="220">Ballia</option><option value="215">Banda</option><option value="236">Barabanki</option><option value="199">Bareilly</option><option value="223">Basti</option><option value="205">Bijnor</option><option value="200">Budaun</option><option value="192">Buland Shahar</option><option value="222">Deoria</option><option value="198">Etah</option><option value="207">Etawah</option><option value="231">Faizabad</option><option value="206">Farrukhabad</option><option value="209">Fatehpur</option><option value="219">Ghazipur</option><option value="232">Gonda</option><option value="221">Gorakhpur</option><option value="214">Hamirpur</option><option value="229">Hardoi</option><option value="213">Jalaun</option><option value="218">Jaunpur</option><option value="211">Jhansi</option><option value="208">Kanpur</option><option value="230">Kheri</option><option value="225">Lucknow</option><option value="197">Mainpuri</option><option value="195">Mathura</option><option value="191">Meerut</option><option value="217">Mirzpur</option><option value="201">Moradabad</option><option value="190">Muzaffarnagar</option><option value="203">Pilibhit</option><option value="235">Pratapgarh</option><option value="227">Rae-Bareily</option><option value="204">Rampur</option><option value="189">Saharanpur</option><option value="202">Shahjahanpur</option><option value="228">Sitapur</option><option value="234">Sultanpur</option><option value="226">Unnao</option><option value="216">Varanasi</option></optgroup><optgroup label="Uttarakhand"><option value="238">Almorah</option><option value="240">Chamoli</option><option value="244">Dehradun</option><option value="243">Garhwal</option><option value="237">Nainital</option><option value="239">Pithorgarh</option><option value="242">Tehri Garhwal</option><option value="241">Uttar Kashi</option></optgroup><optgroup label="West Bengal"><option value="800">24 Parganas</option><option value="807">Bankura</option><option value="806">Birbhum</option><option value="805">Burdwan</option><option value="816">Cooch Behar</option><option value="813">Darjeeling</option><option value="810">Hooghly</option><option value="811">Howrah</option><option value="812">Jalpaiguri</option><option value="821">Kolkata</option><option value="814">Malda</option><option value="818">Midnapur</option><option value="804">Murshidabad</option><option value="803">Nadia</option><option value="817">Purulia</option><option value="822">West Dinajpur</option></optgroup></select></div>
+												<p class="text-danger error"></p>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="form-group">
+												<h6 class="text-left mb-10">
+													<input type="checkbox" class="selAllEle">
+													&nbsp; Elements
+												</h6>
+												<div class="fs-wrap multiple" tabindex="0"><div class="fs-label-wrap"><div class="fs-label">AREA, PRODUCTION, YIELD, SHARE IN TOTAL</div><span class="fs-arrow"></span></div><div class="fs-dropdown hidden"><div class="fs-search"><input type="text" placeholder="Search"></div><div class="fs-no-results hidden">No results found</div><div class="fs-options"><div class="fs-option selected g0" data-value="AREA" data-index="0"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">AREA</div></div><div class="fs-option selected g0" data-value="PRODUCTION" data-index="1"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">PRODUCTION</div></div><div class="fs-option selected g0" data-value="YIELD" data-index="2"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">YIELD</div></div><div class="fs-option selected g0" data-value="SHARE IN TOTAL" data-index="3"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">SHARE IN TOTAL</div></div></div></div><select class="form-control elements hidden" name="elements" multiple="multiple"><option value="AREA">AREA</option><option value="PRODUCTION">PRODUCTION</option><option value="YIELD">YIELD</option><option value="SHARE IN TOTAL">SHARE IN TOTAL</option></select></div>
+												<p class="text-danger error"></p>
+											</div>
+										</div>
+										<div class="col-sm-3">
+											<div class="form-group">
+												<h6 class="text-left mb-10">
+													<input type="checkbox" class="selAllItem">
+													&nbsp;Items
+												</h6>
+												<div class="fs-wrap multiple" tabindex="0"><div class="fs-label-wrap"><div class="fs-label">29 selected</div><span class="fs-arrow"></span></div><div class="fs-dropdown hidden"><div class="fs-search"><input type="text" placeholder="Search"></div><div class="fs-no-results hidden">No results found</div><div class="fs-options"><div class="fs-option selected g0" data-value="RICE" data-index="0"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">RICE</div></div><div class="fs-option selected g0" data-value="WHEAT" data-index="1"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">WHEAT</div></div><div class="fs-option selected g0" data-value="KHARIF SORGHUM" data-index="2"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">KHARIF SORGHUM</div></div><div class="fs-option selected g0" data-value="RABI SORGHUM" data-index="3"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">RABI SORGHUM</div></div><div class="fs-option selected g0" data-value="SORGHUM" data-index="4"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">SORGHUM</div></div><div class="fs-option selected g0" data-value="PEARL MILLET" data-index="5"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">PEARL MILLET</div></div><div class="fs-option selected g0" data-value="MAIZE" data-index="6"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">MAIZE</div></div><div class="fs-option selected g0" data-value="FINGER MILLET" data-index="7"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">FINGER MILLET</div></div><div class="fs-option selected g0" data-value="BARLEY" data-index="8"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">BARLEY</div></div><div class="fs-option selected g0" data-value="CHICKPEA" data-index="9"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">CHICKPEA</div></div><div class="fs-option selected g0" data-value="PIGEONPEA" data-index="10"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">PIGEONPEA</div></div><div class="fs-option selected g0" data-value="MINOR PULSES" data-index="11"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">MINOR PULSES</div></div><div class="fs-option selected g0" data-value="GROUNDNUT" data-index="12"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">GROUNDNUT</div></div><div class="fs-option selected g0" data-value="SESAMUM" data-index="13"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">SESAMUM</div></div><div class="fs-option selected g0" data-value="RAPESEED AND MUSTARD" data-index="14"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">RAPESEED AND MUSTARD</div></div><div class="fs-option selected g0" data-value="SAFFLOWER" data-index="15"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">SAFFLOWER</div></div><div class="fs-option selected g0" data-value="CASTOR" data-index="16"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">CASTOR</div></div><div class="fs-option selected g0" data-value="LINSEED" data-index="17"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">LINSEED</div></div><div class="fs-option selected g0" data-value="SUNFLOWER" data-index="18"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">SUNFLOWER</div></div><div class="fs-option selected g0" data-value="SOYABEAN" data-index="19"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">SOYABEAN</div></div><div class="fs-option selected g0" data-value="OILSEEDS" data-index="20"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">OILSEEDS</div></div><div class="fs-option selected g0" data-value="SUGARCANE" data-index="21"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">SUGARCANE</div></div><div class="fs-option selected g0" data-value="COTTON" data-index="22"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">COTTON</div></div><div class="fs-option selected g0" data-value="FRUITS" data-index="23"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">FRUITS</div></div><div class="fs-option selected g0" data-value="VEGETABLES" data-index="24"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">VEGETABLES</div></div><div class="fs-option selected g0" data-value="FRUITS AND VEGETABLES" data-index="25"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">FRUITS AND VEGETABLES</div></div><div class="fs-option selected g0" data-value="POTATOES" data-index="26"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">POTATOES</div></div><div class="fs-option selected g0" data-value="ONION" data-index="27"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">ONION</div></div><div class="fs-option selected g0" data-value="FODDER" data-index="28"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">FODDER</div></div></div></div><select class="form-control items hidden" name="items" multiple="multiple"><option value="RICE">RICE</option><option value="WHEAT">WHEAT</option><option value="KHARIF SORGHUM">KHARIF SORGHUM</option><option value="RABI SORGHUM">RABI SORGHUM</option><option value="SORGHUM">SORGHUM</option><option value="PEARL MILLET">PEARL MILLET</option><option value="MAIZE">MAIZE</option><option value="FINGER MILLET">FINGER MILLET</option><option value="BARLEY">BARLEY</option><option value="CHICKPEA">CHICKPEA</option><option value="PIGEONPEA">PIGEONPEA</option><option value="MINOR PULSES">MINOR PULSES</option><option value="GROUNDNUT">GROUNDNUT</option><option value="SESAMUM">SESAMUM</option><option value="RAPESEED AND MUSTARD">RAPESEED AND MUSTARD</option><option value="SAFFLOWER">SAFFLOWER</option><option value="CASTOR">CASTOR</option><option value="LINSEED">LINSEED</option><option value="SUNFLOWER">SUNFLOWER</option><option value="SOYABEAN">SOYABEAN</option><option value="OILSEEDS">OILSEEDS</option><option value="SUGARCANE">SUGARCANE</option><option value="COTTON">COTTON</option><option value="FRUITS">FRUITS</option><option value="VEGETABLES">VEGETABLES</option><option value="FRUITS AND VEGETABLES">FRUITS AND VEGETABLES</option><option value="POTATOES">POTATOES</option><option value="ONION">ONION</option><option value="FODDER">FODDER</option></select></div>
+												<p class="text-danger error"></p>
+											</div>
+										</div>
+									</div>
+
+									<div class="row" style="padding: 14px;">
+											<div class="col-sm-7 text-left select_range" style="position:relative;background: #fff;">
+												<label class="radio-inline text-primary-1">
+													<input type="radio" name="inline_optionsRadios" class="form-control yearRadio" value="1" checked="">
+													Select Year Range
+												</label>
+												<div class="form-group yearRangeSlider" style="padding: 30px;"><div class="overlay yearRangeSliderOverlay"></div>
+													<span class="irs irs--flat js-irs-1  irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min" style="visibility: hidden;">1 966</span><span class="irs-max" style="visibility: hidden;">2 017</span><span class="irs-from" style="visibility: visible; left: -1.44377%;">1 966</span><span class="irs-to" style="visibility: visible; left: 96.1246%;">2 017</span><span class="irs-single" style="visibility: hidden; left: 44.2249%;">1 966 — 2 017</span></span><span class="irs-grid" style="width: 97.5684%; left: 1.11581%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -2.20365%;">1 966</span><span class="irs-grid-pol" style="left: 2%"></span><span class="irs-grid-text js-grid-text-1" style="left: 2%; visibility: hidden; margin-left: -2.20365%;">1 967</span><span class="irs-grid-pol" style="left: 4%"></span><span class="irs-grid-text js-grid-text-2" style="left: 4%; visibility: hidden; margin-left: -2.20365%;">1 968</span><span class="irs-grid-pol" style="left: 6%"></span><span class="irs-grid-text js-grid-text-3" style="left: 6%; visibility: hidden; margin-left: -2.20365%;">1 969</span><span class="irs-grid-pol" style="left: 8%"></span><span class="irs-grid-text js-grid-text-4" style="left: 8%; margin-left: -2.20365%;">1 970</span><span class="irs-grid-pol" style="left: 10%"></span><span class="irs-grid-text js-grid-text-5" style="left: 10%; visibility: hidden; margin-left: -2.20365%;">1 971</span><span class="irs-grid-pol" style="left: 12%"></span><span class="irs-grid-text js-grid-text-6" style="left: 12%; visibility: hidden; margin-left: -2.20365%;">1 972</span><span class="irs-grid-pol" style="left: 14%"></span><span class="irs-grid-text js-grid-text-7" style="left: 14%; visibility: hidden; margin-left: -2.20365%;">1 973</span><span class="irs-grid-pol" style="left: 16%"></span><span class="irs-grid-text js-grid-text-8" style="left: 16%; margin-left: -2.20365%;">1 974</span><span class="irs-grid-pol" style="left: 18%"></span><span class="irs-grid-text js-grid-text-9" style="left: 18%; visibility: hidden; margin-left: -2.20365%;">1 975</span><span class="irs-grid-pol" style="left: 20%"></span><span class="irs-grid-text js-grid-text-10" style="left: 20%; visibility: hidden; margin-left: -2.20365%;">1 976</span><span class="irs-grid-pol" style="left: 22%"></span><span class="irs-grid-text js-grid-text-11" style="left: 22%; visibility: hidden; margin-left: -2.20365%;">1 977</span><span class="irs-grid-pol" style="left: 24%"></span><span class="irs-grid-text js-grid-text-12" style="left: 24%; margin-left: -2.20365%;">1 978</span><span class="irs-grid-pol" style="left: 26%"></span><span class="irs-grid-text js-grid-text-13" style="left: 26%; visibility: hidden; margin-left: -2.20365%;">1 979</span><span class="irs-grid-pol" style="left: 28%"></span><span class="irs-grid-text js-grid-text-14" style="left: 28%; visibility: hidden; margin-left: -2.20365%;">1 980</span><span class="irs-grid-pol" style="left: 30%"></span><span class="irs-grid-text js-grid-text-15" style="left: 30%; visibility: hidden; margin-left: -2.20365%;">1 981</span><span class="irs-grid-pol" style="left: 32%"></span><span class="irs-grid-text js-grid-text-16" style="left: 32%; margin-left: -2.20365%;">1 982</span><span class="irs-grid-pol" style="left: 34%"></span><span class="irs-grid-text js-grid-text-17" style="left: 34%; visibility: hidden; margin-left: -2.20365%;">1 983</span><span class="irs-grid-pol" style="left: 36%"></span><span class="irs-grid-text js-grid-text-18" style="left: 36%; visibility: hidden; margin-left: -2.20365%;">1 984</span><span class="irs-grid-pol" style="left: 38%"></span><span class="irs-grid-text js-grid-text-19" style="left: 38%; visibility: hidden; margin-left: -2.20365%;">1 985</span><span class="irs-grid-pol" style="left: 40%"></span><span class="irs-grid-text js-grid-text-20" style="left: 40%; margin-left: -2.20365%;">1 986</span><span class="irs-grid-pol" style="left: 42%"></span><span class="irs-grid-text js-grid-text-21" style="left: 42%; visibility: hidden; margin-left: -2.20365%;">1 987</span><span class="irs-grid-pol" style="left: 44%"></span><span class="irs-grid-text js-grid-text-22" style="left: 44%; visibility: hidden; margin-left: -2.20365%;">1 988</span><span class="irs-grid-pol" style="left: 46%"></span><span class="irs-grid-text js-grid-text-23" style="left: 46%; visibility: hidden; margin-left: -2.20365%;">1 989</span><span class="irs-grid-pol" style="left: 48%"></span><span class="irs-grid-text js-grid-text-24" style="left: 48%; margin-left: -2.20365%;">1 990</span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-25" style="left: 50%; visibility: hidden; margin-left: -2.20365%;">1 992</span><span class="irs-grid-pol" style="left: 52%"></span><span class="irs-grid-text js-grid-text-26" style="left: 52%; visibility: hidden; margin-left: -2.20365%;">1 993</span><span class="irs-grid-pol" style="left: 54%"></span><span class="irs-grid-text js-grid-text-27" style="left: 54%; visibility: hidden; margin-left: -2.20365%;">1 994</span><span class="irs-grid-pol" style="left: 56%"></span><span class="irs-grid-text js-grid-text-28" style="left: 56%; margin-left: -2.20365%;">1 995</span><span class="irs-grid-pol" style="left: 58%"></span><span class="irs-grid-text js-grid-text-29" style="left: 58%; visibility: hidden; margin-left: -2.20365%;">1 996</span><span class="irs-grid-pol" style="left: 60%"></span><span class="irs-grid-text js-grid-text-30" style="left: 60%; visibility: hidden; margin-left: -2.20365%;">1 997</span><span class="irs-grid-pol" style="left: 62%"></span><span class="irs-grid-text js-grid-text-31" style="left: 62%; visibility: hidden; margin-left: -2.20365%;">1 998</span><span class="irs-grid-pol" style="left: 64%"></span><span class="irs-grid-text js-grid-text-32" style="left: 64%; margin-left: -2.20365%;">1 999</span><span class="irs-grid-pol" style="left: 66%"></span><span class="irs-grid-text js-grid-text-33" style="left: 66%; visibility: hidden; margin-left: -2.20365%;">2 000</span><span class="irs-grid-pol" style="left: 68%"></span><span class="irs-grid-text js-grid-text-34" style="left: 68%; visibility: hidden; margin-left: -2.20365%;">2 001</span><span class="irs-grid-pol" style="left: 70%"></span><span class="irs-grid-text js-grid-text-35" style="left: 70%; visibility: hidden; margin-left: -2.20365%;">2 002</span><span class="irs-grid-pol" style="left: 72%"></span><span class="irs-grid-text js-grid-text-36" style="left: 72%; margin-left: -2.20365%;">2 003</span><span class="irs-grid-pol" style="left: 74%"></span><span class="irs-grid-text js-grid-text-37" style="left: 74%; visibility: hidden; margin-left: -2.20365%;">2 004</span><span class="irs-grid-pol" style="left: 76%"></span><span class="irs-grid-text js-grid-text-38" style="left: 76%; visibility: hidden; margin-left: -2.20365%;">2 005</span><span class="irs-grid-pol" style="left: 78%"></span><span class="irs-grid-text js-grid-text-39" style="left: 78%; visibility: hidden; margin-left: -2.20365%;">2 006</span><span class="irs-grid-pol" style="left: 80%"></span><span class="irs-grid-text js-grid-text-40" style="left: 80%; margin-left: -2.20365%;">2 007</span><span class="irs-grid-pol" style="left: 82%"></span><span class="irs-grid-text js-grid-text-41" style="left: 82%; visibility: hidden; margin-left: -2.20365%;">2 008</span><span class="irs-grid-pol" style="left: 84%"></span><span class="irs-grid-text js-grid-text-42" style="left: 84%; visibility: hidden; margin-left: -2.20365%;">2 009</span><span class="irs-grid-pol" style="left: 86%"></span><span class="irs-grid-text js-grid-text-43" style="left: 86%; visibility: hidden; margin-left: -2.20365%;">2 010</span><span class="irs-grid-pol" style="left: 88%"></span><span class="irs-grid-text js-grid-text-44" style="left: 88%; margin-left: -2.12766%;">2 011</span><span class="irs-grid-pol" style="left: 90%"></span><span class="irs-grid-text js-grid-text-45" style="left: 90%; visibility: hidden; margin-left: -2.20365%;">2 012</span><span class="irs-grid-pol" style="left: 92%"></span><span class="irs-grid-text js-grid-text-46" style="left: 92%; visibility: hidden; margin-left: -2.20365%;">2 013</span><span class="irs-grid-pol" style="left: 94%"></span><span class="irs-grid-text js-grid-text-47" style="left: 94%; visibility: hidden; margin-left: -2.20365%;">2 014</span><span class="irs-grid-pol" style="left: 96%"></span><span class="irs-grid-text js-grid-text-48" style="left: 96%; margin-left: -2.20365%;">2 015</span><span class="irs-grid-pol" style="left: 98%"></span><span class="irs-grid-text js-grid-text-49" style="left: 98%; visibility: hidden; margin-left: -2.20365%;">2 016</span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-50" style="left: 100%; visibility: hidden; margin-left: -2.20365%;">2 017</span></span><span class="irs-bar" style="left: 1.21581%; width: 97.5684%;"></span><span class="irs-shadow shadow-from" style="display: none;"></span><span class="irs-shadow shadow-to" style="display: none;"></span><span class="irs-handle from" style="left: 0%;"><i></i><i></i><i></i></span><span class="irs-handle to" style="left: 97.5684%;"><i></i><i></i><i></i></span></span><input type="text" class="years irs-hidden-input" name="years" value="" tabindex="-1" readonly="">
+													<p class="text-danger error"></p>
+												</div>
+											</div>
+
+											<div class="col-sm-1 text-center">
+												<div id="content_or">
+													<div class="circle gray">OR</div>
+												</div>
+											</div>
+
+											<div class="col-sm-4 text-left select_range yearBlock">
+												<label class="radio-inline text-left text-primary-1">
+													<input type="radio" name="inline_optionsRadios" class="form-control yearRadio" value="2">
+													Select Years
+												</label>
+												<div class="form-group allYearBox" style="padding: 30px 0px;">
+													<h6 class="text-left mb-10">
+														<input type="checkbox" class="selAllYears">
+														&nbsp; All Years
+													</h6>
+													<div class="fs-wrap multiple" tabindex="0"><div class="fs-label-wrap"><div class="fs-label">52 selected</div><span class="fs-arrow"></span></div><div class="fs-dropdown hidden"><div class="fs-search"><input type="text" placeholder="Search"></div><div class="fs-no-results hidden">No results found</div><div class="fs-options"><div class="fs-option selected g0" data-value="1966" data-index="0"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1966</div></div><div class="fs-option selected g0" data-value="1967" data-index="1"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1967</div></div><div class="fs-option selected g0" data-value="1968" data-index="2"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1968</div></div><div class="fs-option selected g0" data-value="1969" data-index="3"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1969</div></div><div class="fs-option selected g0" data-value="1970" data-index="4"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1970</div></div><div class="fs-option selected g0" data-value="1971" data-index="5"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1971</div></div><div class="fs-option selected g0" data-value="1972" data-index="6"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1972</div></div><div class="fs-option selected g0" data-value="1973" data-index="7"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1973</div></div><div class="fs-option selected g0" data-value="1974" data-index="8"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1974</div></div><div class="fs-option selected g0" data-value="1975" data-index="9"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1975</div></div><div class="fs-option selected g0" data-value="1976" data-index="10"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1976</div></div><div class="fs-option selected g0" data-value="1977" data-index="11"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1977</div></div><div class="fs-option selected g0" data-value="1978" data-index="12"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1978</div></div><div class="fs-option selected g0" data-value="1979" data-index="13"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1979</div></div><div class="fs-option selected g0" data-value="1980" data-index="14"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1980</div></div><div class="fs-option selected g0" data-value="1981" data-index="15"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1981</div></div><div class="fs-option selected g0" data-value="1982" data-index="16"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1982</div></div><div class="fs-option selected g0" data-value="1983" data-index="17"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1983</div></div><div class="fs-option selected g0" data-value="1984" data-index="18"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1984</div></div><div class="fs-option selected g0" data-value="1985" data-index="19"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1985</div></div><div class="fs-option selected g0" data-value="1986" data-index="20"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1986</div></div><div class="fs-option selected g0" data-value="1987" data-index="21"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1987</div></div><div class="fs-option selected g0" data-value="1988" data-index="22"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1988</div></div><div class="fs-option selected g0" data-value="1989" data-index="23"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1989</div></div><div class="fs-option selected g0" data-value="1990" data-index="24"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1990</div></div><div class="fs-option selected g0" data-value="1991" data-index="25"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1991</div></div><div class="fs-option selected g0" data-value="1992" data-index="26"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1992</div></div><div class="fs-option selected g0" data-value="1993" data-index="27"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1993</div></div><div class="fs-option selected g0" data-value="1994" data-index="28"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1994</div></div><div class="fs-option selected g0" data-value="1995" data-index="29"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1995</div></div><div class="fs-option selected g0" data-value="1996" data-index="30"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1996</div></div><div class="fs-option selected g0" data-value="1997" data-index="31"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1997</div></div><div class="fs-option selected g0" data-value="1998" data-index="32"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1998</div></div><div class="fs-option selected g0" data-value="1999" data-index="33"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">1999</div></div><div class="fs-option selected g0" data-value="2000" data-index="34"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2000</div></div><div class="fs-option selected g0" data-value="2001" data-index="35"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2001</div></div><div class="fs-option selected g0" data-value="2002" data-index="36"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2002</div></div><div class="fs-option selected g0" data-value="2003" data-index="37"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2003</div></div><div class="fs-option selected g0" data-value="2004" data-index="38"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2004</div></div><div class="fs-option selected g0" data-value="2005" data-index="39"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2005</div></div><div class="fs-option selected g0" data-value="2006" data-index="40"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2006</div></div><div class="fs-option selected g0" data-value="2007" data-index="41"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2007</div></div><div class="fs-option selected g0" data-value="2008" data-index="42"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2008</div></div><div class="fs-option selected g0" data-value="2009" data-index="43"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2009</div></div><div class="fs-option selected g0" data-value="2010" data-index="44"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2010</div></div><div class="fs-option selected g0" data-value="2011" data-index="45"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2011</div></div><div class="fs-option selected g0" data-value="2012" data-index="46"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2012</div></div><div class="fs-option selected g0" data-value="2013" data-index="47"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2013</div></div><div class="fs-option selected g0" data-value="2014" data-index="48"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2014</div></div><div class="fs-option selected g0" data-value="2015" data-index="49"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2015</div></div><div class="fs-option selected g0" data-value="2016" data-index="50"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2016</div></div><div class="fs-option selected g0" data-value="2017" data-index="51"><span class="fs-checkbox"><i></i></span><div class="fs-option-label">2017</div></div></div></div><select class="yearList form-control hidden" multiple="multiple" name="yearList[]"><option value="1966">1966</option><option value="1967">1967</option><option value="1968">1968</option><option value="1969">1969</option><option value="1970">1970</option><option value="1971">1971</option><option value="1972">1972</option><option value="1973">1973</option><option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option><option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option><option value="1980">1980</option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option></select></div>
+													<p class="text-danger error"></p>
+												</div>
+											</div>
+										</div>
+										<div class="text-right">
+											<button type="button" class="btn btn-sm show-data">Show Data</button>
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<section class="container-fluid clearfix main_section mt-30 mb-20  plr-20px" id="showdata-table">
+			<div id="main_content_outer" class="clearfix">
+				<div id="main_content">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="panel panel-default news-post" style="border:none;">
+								<div class="panel-heading" style="background: #fff;border:none;padding:10px 15px;">
+									<h2 class="pull-left head_style mb-10"><strong class="font-25 head_style"> Data</strong></h2>
+									<div class="visualDiv pull-right"></div>
+									<div class="exportDiv pull-right"><div class="dt-buttons"> <button class="dt-button btn btn-sm visual" tabindex="0" aria-controls="DataTables_Table_0" type="button"><span><i class="fa fa-line-chart"></i> Visualization</span></button> <button class="dt-button buttons-csv buttons-html5 btn btn-sm export" tabindex="0" aria-controls="DataTables_Table_0" type="button"><span><i class="fa fa-download"></i> Export as CSV</span></button> </div></div>
+
+								</div>
+								<div class="panel-body" style="padding-top:0;">
+									<div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="DataTables_Table_0"></label></div><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 19814px; padding-right: 0px;"><table class="table table-stripped table-bordered display nowrap no-footer dataTable" style="width: 19814px; margin-left: 0px;" role="grid" aria-describedby="DataTables_Table_0_info"><thead><tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 66px;" aria-sort="ascending" aria-label="Dist Code: activate to sort column descending">Dist Code</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 31px;" aria-label="Year: activate to sort column ascending">Year</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 74px;" aria-label="State Code: activate to sort column ascending">State Code</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 78px;" aria-label="State Name: activate to sort column ascending">State Name</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 70px;" aria-label="Dist Name: activate to sort column ascending">Dist Name</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 142px;" aria-label="RICE AREA (1000 ha): activate to sort column ascending">RICE AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 215px;" aria-label="RICE PRODUCTION (1000 tons): activate to sort column ascending">RICE PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 153px;" aria-label="RICE YIELD (Kg per ha): activate to sort column ascending">RICE YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 163px;" aria-label="WHEAT AREA (1000 ha): activate to sort column ascending">WHEAT AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 236px;" aria-label="WHEAT PRODUCTION (1000 tons): activate to sort column ascending">WHEAT PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 174px;" aria-label="WHEAT YIELD (Kg per ha): activate to sort column ascending">WHEAT YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 243px;" aria-label="KHARIF SORGHUM AREA (1000 ha): activate to sort column ascending">KHARIF SORGHUM AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 317px;" aria-label="KHARIF SORGHUM PRODUCTION (1000 tons): activate to sort column ascending">KHARIF SORGHUM PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 255px;" aria-label="KHARIF SORGHUM YIELD (Kg per ha): activate to sort column ascending">KHARIF SORGHUM YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 223px;" aria-label="RABI SORGHUM AREA (1000 ha): activate to sort column ascending">RABI SORGHUM AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 296px;" aria-label="RABI SORGHUM PRODUCTION (1000 tons): activate to sort column ascending">RABI SORGHUM PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 234px;" aria-label="RABI SORGHUM YIELD (Kg per ha): activate to sort column ascending">RABI SORGHUM YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 185px;" aria-label="SORGHUM AREA (1000 ha): activate to sort column ascending">SORGHUM AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 258px;" aria-label="SORGHUM PRODUCTION (1000 tons): activate to sort column ascending">SORGHUM PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 196px;" aria-label="SORGHUM YIELD (Kg per ha): activate to sort column ascending">SORGHUM YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 209px;" aria-label="PEARL MILLET AREA (1000 ha): activate to sort column ascending">PEARL MILLET AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 283px;" aria-label="PEARL MILLET PRODUCTION (1000 tons): activate to sort column ascending">PEARL MILLET PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 221px;" aria-label="PEARL MILLET YIELD (Kg per ha): activate to sort column ascending">PEARL MILLET YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 156px;" aria-label="MAIZE AREA (1000 ha): activate to sort column ascending">MAIZE AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 229px;" aria-label="MAIZE PRODUCTION (1000 tons): activate to sort column ascending">MAIZE PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 167px;" aria-label="MAIZE YIELD (Kg per ha): activate to sort column ascending">MAIZE YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 217px;" aria-label="FINGER MILLET AREA (1000 ha): activate to sort column ascending">FINGER MILLET AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 290px;" aria-label="FINGER MILLET PRODUCTION (1000 tons): activate to sort column ascending">FINGER MILLET PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 228px;" aria-label="FINGER MILLET YIELD (Kg per ha): activate to sort column ascending">FINGER MILLET YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 165px;" aria-label="BARLEY AREA (1000 ha): activate to sort column ascending">BARLEY AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 238px;" aria-label="BARLEY PRODUCTION (1000 tons): activate to sort column ascending">BARLEY PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 176px;" aria-label="BARLEY YIELD (Kg per ha): activate to sort column ascending">BARLEY YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 184px;" aria-label="CHICKPEA AREA (1000 ha): activate to sort column ascending">CHICKPEA AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 257px;" aria-label="CHICKPEA PRODUCTION (1000 tons): activate to sort column ascending">CHICKPEA PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 195px;" aria-label="CHICKPEA YIELD (Kg per ha): activate to sort column ascending">CHICKPEA YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 194px;" aria-label="PIGEONPEA AREA (1000 ha): activate to sort column ascending">PIGEONPEA AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 267px;" aria-label="PIGEONPEA PRODUCTION (1000 tons): activate to sort column ascending">PIGEONPEA PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 205px;" aria-label="PIGEONPEA YIELD (Kg per ha): activate to sort column ascending">PIGEONPEA YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 216px;" aria-label="MINOR PULSES AREA (1000 ha): activate to sort column ascending">MINOR PULSES AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 289px;" aria-label="MINOR PULSES PRODUCTION (1000 tons): activate to sort column ascending">MINOR PULSES PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 227px;" aria-label="MINOR PULSES YIELD (Kg per ha): activate to sort column ascending">MINOR PULSES YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 206px;" aria-label="GROUNDNUT AREA (1000 ha): activate to sort column ascending">GROUNDNUT AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 279px;" aria-label="GROUNDNUT PRODUCTION (1000 tons): activate to sort column ascending">GROUNDNUT PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 217px;" aria-label="GROUNDNUT YIELD (Kg per ha): activate to sort column ascending">GROUNDNUT YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 183px;" aria-label="SESAMUM AREA (1000 ha): activate to sort column ascending">SESAMUM AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 256px;" aria-label="SESAMUM PRODUCTION (1000 tons): activate to sort column ascending">SESAMUM PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 194px;" aria-label="SESAMUM YIELD (Kg per ha): activate to sort column ascending">SESAMUM YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 295px;" aria-label="RAPESEED AND MUSTARD AREA (1000 ha): activate to sort column ascending">RAPESEED AND MUSTARD AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 368px;" aria-label="RAPESEED AND MUSTARD PRODUCTION (1000 tons): activate to sort column ascending">RAPESEED AND MUSTARD PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 306px;" aria-label="RAPESEED AND MUSTARD YIELD (Kg per ha): activate to sort column ascending">RAPESEED AND MUSTARD YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 197px;" aria-label="SAFFLOWER AREA (1000 ha): activate to sort column ascending">SAFFLOWER AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 271px;" aria-label="SAFFLOWER PRODUCTION (1000 tons): activate to sort column ascending">SAFFLOWER PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 209px;" aria-label="SAFFLOWER YIELD (Kg per ha): activate to sort column ascending">SAFFLOWER YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 168px;" aria-label="CASTOR AREA (1000 ha): activate to sort column ascending">CASTOR AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 241px;" aria-label="CASTOR PRODUCTION (1000 tons): activate to sort column ascending">CASTOR PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 179px;" aria-label="CASTOR YIELD (Kg per ha): activate to sort column ascending">CASTOR YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 169px;" aria-label="LINSEED AREA (1000 ha): activate to sort column ascending">LINSEED AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 242px;" aria-label="LINSEED PRODUCTION (1000 tons): activate to sort column ascending">LINSEED PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 180px;" aria-label="LINSEED YIELD (Kg per ha): activate to sort column ascending">LINSEED YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 201px;" aria-label="SUNFLOWER AREA (1000 ha): activate to sort column ascending">SUNFLOWER AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 274px;" aria-label="SUNFLOWER PRODUCTION (1000 tons): activate to sort column ascending">SUNFLOWER PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 212px;" aria-label="SUNFLOWER YIELD (Kg per ha): activate to sort column ascending">SUNFLOWER YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 187px;" aria-label="SOYABEAN AREA (1000 ha): activate to sort column ascending">SOYABEAN AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 261px;" aria-label="SOYABEAN PRODUCTION (1000 tons): activate to sort column ascending">SOYABEAN PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 199px;" aria-label="SOYABEAN YIELD (Kg per ha): activate to sort column ascending">SOYABEAN YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 178px;" aria-label="OILSEEDS AREA (1000 ha): activate to sort column ascending">OILSEEDS AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 251px;" aria-label="OILSEEDS PRODUCTION (1000 tons): activate to sort column ascending">OILSEEDS PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 189px;" aria-label="OILSEEDS YIELD (Kg per ha): activate to sort column ascending">OILSEEDS YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 199px;" aria-label="SUGARCANE AREA (1000 ha): activate to sort column ascending">SUGARCANE AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 272px;" aria-label="SUGARCANE PRODUCTION (1000 tons): activate to sort column ascending">SUGARCANE PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 210px;" aria-label="SUGARCANE YIELD (Kg per ha): activate to sort column ascending">SUGARCANE YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 171px;" aria-label="COTTON AREA (1000 ha): activate to sort column ascending">COTTON AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 244px;" aria-label="COTTON PRODUCTION (1000 tons): activate to sort column ascending">COTTON PRODUCTION (1000 tons)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 182px;" aria-label="COTTON YIELD (Kg per ha): activate to sort column ascending">COTTON YIELD (Kg per ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 159px;" aria-label="FRUITS AREA (1000 ha): activate to sort column ascending">FRUITS AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 200px;" aria-label="VEGETABLES AREA (1000 ha): activate to sort column ascending">VEGETABLES AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 289px;" aria-label="FRUITS AND VEGETABLES AREA (1000 ha): activate to sort column ascending">FRUITS AND VEGETABLES AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 184px;" aria-label="POTATOES AREA (1000 ha): activate to sort column ascending">POTATOES AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 160px;" aria-label="ONION AREA (1000 ha): activate to sort column ascending">ONION AREA (1000 ha)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 170px;" aria-label="FODDER AREA (1000 ha): activate to sort column ascending">FODDER AREA (1000 ha)</th></tr></thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; width: 100%;"><table class="table table-stripped table-bordered display nowrap no-footer dataTable" style="width: 100%;" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info"><thead><tr role="row" style="height: 0px;"><th class="sorting_asc" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 66px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="ascending" aria-label="Dist Code: activate to sort column descending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Dist Code</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 31px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Year: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Year</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 74px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="State Code: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">State Code</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 78px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="State Name: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">State Name</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 70px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Dist Name: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Dist Name</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 142px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="RICE AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">RICE AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 215px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="RICE PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">RICE PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 153px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="RICE YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">RICE YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 163px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="WHEAT AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">WHEAT AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 236px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="WHEAT PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">WHEAT PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 174px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="WHEAT YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">WHEAT YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 243px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="KHARIF SORGHUM AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">KHARIF SORGHUM AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 317px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="KHARIF SORGHUM PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">KHARIF SORGHUM PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 255px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="KHARIF SORGHUM YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">KHARIF SORGHUM YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 223px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="RABI SORGHUM AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">RABI SORGHUM AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 296px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="RABI SORGHUM PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">RABI SORGHUM PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 234px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="RABI SORGHUM YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">RABI SORGHUM YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 185px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SORGHUM AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SORGHUM AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 258px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SORGHUM PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SORGHUM PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 196px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SORGHUM YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SORGHUM YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 209px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="PEARL MILLET AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">PEARL MILLET AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 283px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="PEARL MILLET PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">PEARL MILLET PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 221px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="PEARL MILLET YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">PEARL MILLET YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 156px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="MAIZE AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">MAIZE AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 229px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="MAIZE PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">MAIZE PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 167px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="MAIZE YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">MAIZE YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 217px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="FINGER MILLET AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">FINGER MILLET AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 290px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="FINGER MILLET PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">FINGER MILLET PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 228px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="FINGER MILLET YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">FINGER MILLET YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 165px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="BARLEY AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">BARLEY AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 238px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="BARLEY PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">BARLEY PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 176px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="BARLEY YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">BARLEY YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 184px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="CHICKPEA AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">CHICKPEA AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 257px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="CHICKPEA PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">CHICKPEA PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 195px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="CHICKPEA YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">CHICKPEA YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 194px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="PIGEONPEA AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">PIGEONPEA AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 267px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="PIGEONPEA PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">PIGEONPEA PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 205px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="PIGEONPEA YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">PIGEONPEA YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 216px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="MINOR PULSES AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">MINOR PULSES AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 289px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="MINOR PULSES PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">MINOR PULSES PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 227px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="MINOR PULSES YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">MINOR PULSES YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 206px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="GROUNDNUT AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">GROUNDNUT AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 279px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="GROUNDNUT PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">GROUNDNUT PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 217px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="GROUNDNUT YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">GROUNDNUT YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 183px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SESAMUM AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SESAMUM AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 256px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SESAMUM PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SESAMUM PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 194px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SESAMUM YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SESAMUM YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 295px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="RAPESEED AND MUSTARD AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">RAPESEED AND MUSTARD AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 368px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="RAPESEED AND MUSTARD PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">RAPESEED AND MUSTARD PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 306px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="RAPESEED AND MUSTARD YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">RAPESEED AND MUSTARD YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 197px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SAFFLOWER AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SAFFLOWER AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 271px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SAFFLOWER PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SAFFLOWER PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 209px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SAFFLOWER YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SAFFLOWER YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 168px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="CASTOR AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">CASTOR AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 241px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="CASTOR PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">CASTOR PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 179px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="CASTOR YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">CASTOR YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 169px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="LINSEED AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">LINSEED AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 242px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="LINSEED PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">LINSEED PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 180px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="LINSEED YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">LINSEED YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 201px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SUNFLOWER AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SUNFLOWER AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 274px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SUNFLOWER PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SUNFLOWER PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 212px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SUNFLOWER YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SUNFLOWER YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 187px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SOYABEAN AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SOYABEAN AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 261px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SOYABEAN PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SOYABEAN PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 199px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SOYABEAN YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SOYABEAN YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 178px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="OILSEEDS AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">OILSEEDS AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 251px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="OILSEEDS PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">OILSEEDS PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 189px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="OILSEEDS YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">OILSEEDS YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 199px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SUGARCANE AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SUGARCANE AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 272px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SUGARCANE PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SUGARCANE PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 210px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="SUGARCANE YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">SUGARCANE YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 171px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="COTTON AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">COTTON AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 244px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="COTTON PRODUCTION (1000 tons): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">COTTON PRODUCTION (1000 tons)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 182px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="COTTON YIELD (Kg per ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">COTTON YIELD (Kg per ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 159px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="FRUITS AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">FRUITS AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 200px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="VEGETABLES AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">VEGETABLES AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 289px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="FRUITS AND VEGETABLES AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">FRUITS AND VEGETABLES AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 184px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="POTATOES AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">POTATOES AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 160px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="ONION AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">ONION AREA (1000 ha)</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 170px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="FODDER AREA (1000 ha): activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">FODDER AREA (1000 ha)</div></th></tr></thead><tbody><tr role="row" class="odd selected"><td class="sorting_1">1</td><td>1966</td><td>14</td><td>Chhattisgarh</td><td>Durg</td><td>548.0</td><td>185.0</td><td>337.59</td><td>44.0</td><td>20.0</td><td>454.55</td><td>0.6</td><td>0.4</td><td>666.67</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.6</td><td>0.4</td><td>666.67</td><td>0.0</td><td>0.0</td><td>0.0</td><td>3.0</td><td>2.0</td><td>666.67</td><td>0.8</td><td>0.2</td><td>250.0</td><td>0.1</td><td>0.0</td><td>0.0</td><td>54.0</td><td>27.0</td><td>500.0</td><td>37.0</td><td>15.0</td><td>405.41</td><td>114.96</td><td>-1.0</td><td>-1.0</td><td>0.2</td><td>0.1</td><td>500.0</td><td>3.0</td><td>0.3</td><td>100.0</td><td>1.0</td><td>0.2</td><td>200.0</td><td>0.07</td><td>0.0</td><td>0.0</td><td>0.7</td><td>0.2</td><td>285.71</td><td>45.7</td><td>6.8</td><td>148.8</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>50.7</td><td>-1.0</td><td>-1.0</td><td>0.9</td><td>1.6</td><td>1777.78</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.95</td><td>6.64</td><td>12.59</td><td>0.01</td><td>0.6</td><td>0.47</td></tr><tr role="row" class="even"><td class="sorting_1">1</td><td>1967</td><td>14</td><td>Chhattisgarh</td><td>Durg</td><td>547.0</td><td>409.0</td><td>747.71</td><td>50.0</td><td>26.0</td><td>520.0</td><td>1.1</td><td>0.9</td><td>818.18</td><td>0.0</td><td>0.0</td><td>0.0</td><td>1.1</td><td>0.9</td><td>818.18</td><td>0.0</td><td>0.0</td><td>0.0</td><td>3.0</td><td>3.0</td><td>1000.0</td><td>0.9</td><td>0.2</td><td>222.22</td><td>0.2</td><td>0.1</td><td>500.0</td><td>52.0</td><td>15.0</td><td>288.46</td><td>36.0</td><td>26.0</td><td>722.22</td><td>269.54</td><td>-1.0</td><td>-1.0</td><td>0.1</td><td>0.1</td><td>1000.0</td><td>11.6</td><td>0.9</td><td>77.59</td><td>1.1</td><td>0.3</td><td>272.73</td><td>0.01</td><td>0.0</td><td>0.0</td><td>0.5</td><td>0.1</td><td>200.0</td><td>100.1</td><td>25.8</td><td>257.74</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>113.55</td><td>-1.0</td><td>-1.0</td><td>0.8</td><td>1.2</td><td>1500.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.77</td><td>7.24</td><td>13.02</td><td>0.01</td><td>0.56</td><td>1.23</td></tr><tr role="row" class="odd"><td class="sorting_1">1</td><td>1968</td><td>14</td><td>Chhattisgarh</td><td>Durg</td><td>556.3</td><td>468.0</td><td>841.27</td><td>53.7</td><td>30.0</td><td>558.66</td><td>0.5</td><td>0.4</td><td>800.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.5</td><td>0.4</td><td>800.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>2.8</td><td>2.0</td><td>714.29</td><td>0.8</td><td>0.2</td><td>250.0</td><td>0.2</td><td>0.1</td><td>500.0</td><td>51.3</td><td>23.0</td><td>448.34</td><td>35.7</td><td>28.0</td><td>784.31</td><td>289.46</td><td>-1.0</td><td>-1.0</td><td>0.1</td><td>0.1</td><td>1000.0</td><td>11.3</td><td>1.6</td><td>141.59</td><td>1.2</td><td>0.5</td><td>416.67</td><td>0.02</td><td>0.0</td><td>0.0</td><td>0.6</td><td>0.3</td><td>500.0</td><td>113.3</td><td>23.8</td><td>210.06</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>126.62</td><td>-1.0</td><td>-1.0</td><td>1.0</td><td>1.0</td><td>1000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.41</td><td>7.4</td><td>12.81</td><td>0.1</td><td>0.58</td><td>1.02</td></tr><tr role="row" class="even"><td class="sorting_1">1</td><td>1969</td><td>14</td><td>Chhattisgarh</td><td>Durg</td><td>563.4</td><td>400.8</td><td>711.4</td><td>49.4</td><td>26.5</td><td>536.44</td><td>0.8</td><td>0.6</td><td>750.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.8</td><td>0.6</td><td>750.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>2.7</td><td>2.3</td><td>851.85</td><td>0.8</td><td>0.2</td><td>250.0</td><td>0.2</td><td>0.1</td><td>500.0</td><td>52.6</td><td>23.1</td><td>439.16</td><td>35.7</td><td>27.3</td><td>764.71</td><td>298.18</td><td>98.3</td><td>329.67</td><td>0.1</td><td>0.1</td><td>1000.0</td><td>11.4</td><td>1.4</td><td>122.81</td><td>1.2</td><td>0.4</td><td>333.33</td><td>0.02</td><td>0.0</td><td>0.0</td><td>0.5</td><td>0.1</td><td>200.0</td><td>101.1</td><td>13.0</td><td>128.59</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>114.14</td><td>14.9</td><td>130.54</td><td>1.0</td><td>1.9</td><td>1900.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.52</td><td>7.16</td><td>12.69</td><td>0.01</td><td>0.56</td><td>0.84</td></tr><tr role="row" class="odd"><td class="sorting_1">1</td><td>1970</td><td>14</td><td>Chhattisgarh</td><td>Durg</td><td>571.6</td><td>473.6</td><td>828.55</td><td>44.2</td><td>29.0</td><td>656.11</td><td>0.9</td><td>0.6</td><td>666.67</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.9</td><td>0.6</td><td>666.67</td><td>0.0</td><td>0.0</td><td>0.0</td><td>2.5</td><td>3.3</td><td>1320.0</td><td>0.8</td><td>0.2</td><td>250.0</td><td>0.1</td><td>0.1</td><td>1000.0</td><td>53.3</td><td>32.6</td><td>611.63</td><td>33.3</td><td>35.2</td><td>1057.06</td><td>342.8</td><td>142.9</td><td>416.86</td><td>0.1</td><td>0.1</td><td>1000.0</td><td>10.8</td><td>1.1</td><td>101.85</td><td>1.1</td><td>0.4</td><td>363.64</td><td>0.02</td><td>0.0</td><td>0.0</td><td>0.4</td><td>0.1</td><td>250.0</td><td>114.1</td><td>22.7</td><td>198.95</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>126.4</td><td>24.3</td><td>192.25</td><td>0.7</td><td>1.4</td><td>2000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.45</td><td>7.19</td><td>12.64</td><td>0.02</td><td>0.52</td><td>0.42</td></tr><tr role="row" class="even"><td class="sorting_1">1</td><td>1971</td><td>14</td><td>Chhattisgarh</td><td>Durg</td><td>581.8</td><td>412.9</td><td>709.69</td><td>44.4</td><td>25.8</td><td>581.08</td><td>0.3</td><td>0.2</td><td>666.67</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.3</td><td>0.2</td><td>666.67</td><td>0.0</td><td>0.0</td><td>0.0</td><td>2.7</td><td>3.1</td><td>1148.15</td><td>0.9</td><td>0.2</td><td>222.22</td><td>0.2</td><td>0.1</td><td>500.0</td><td>50.3</td><td>32.8</td><td>652.09</td><td>33.9</td><td>34.6</td><td>1020.65</td><td>351.5</td><td>154.9</td><td>440.68</td><td>0.1</td><td>0.0</td><td>0.0</td><td>10.8</td><td>1.0</td><td>92.59</td><td>1.1</td><td>0.4</td><td>363.64</td><td>0.07</td><td>0.0</td><td>0.0</td><td>0.3</td><td>0.1</td><td>333.33</td><td>111.7</td><td>18.5</td><td>165.62</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>124.2</td><td>20.2</td><td>162.64</td><td>0.5</td><td>1.0</td><td>2000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.42</td><td>7.48</td><td>12.91</td><td>0.01</td><td>0.54</td><td>0.38</td></tr><tr role="row" class="odd"><td class="sorting_1">1</td><td>1972</td><td>14</td><td>Chhattisgarh</td><td>Durg</td><td>582.2</td><td>381.0</td><td>654.41</td><td>39.6</td><td>20.6</td><td>520.2</td><td>0.3</td><td>0.3</td><td>1000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.3</td><td>0.3</td><td>1000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>2.8</td><td>3.2</td><td>1142.86</td><td>0.8</td><td>0.1</td><td>125.0</td><td>0.1</td><td>0.1</td><td>1000.0</td><td>52.3</td><td>32.6</td><td>623.33</td><td>32.8</td><td>42.4</td><td>1292.68</td><td>331.8</td><td>100.6</td><td>303.19</td><td>0.1</td><td>0.0</td><td>0.0</td><td>10.4</td><td>1.9</td><td>182.69</td><td>1.2</td><td>0.7</td><td>583.33</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.3</td><td>0.1</td><td>333.33</td><td>111.7</td><td>22.7</td><td>203.22</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>123.8</td><td>25.4</td><td>205.17</td><td>0.5</td><td>1.0</td><td>2000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.48</td><td>7.53</td><td>13.01</td><td>0.01</td><td>0.55</td><td>0.26</td></tr><tr role="row" class="even"><td class="sorting_1">1</td><td>1973</td><td>14</td><td>Chhattisgarh</td><td>Durg</td><td>600.0</td><td>471.9</td><td>786.5</td><td>37.3</td><td>18.6</td><td>498.66</td><td>0.2</td><td>0.2</td><td>1000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.2</td><td>0.2</td><td>1000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>2.9</td><td>2.7</td><td>931.03</td><td>0.8</td><td>0.2</td><td>250.0</td><td>0.1</td><td>0.1</td><td>1000.0</td><td>56.4</td><td>32.4</td><td>574.47</td><td>32.2</td><td>22.8</td><td>708.07</td><td>352.6</td><td>106.4</td><td>301.76</td><td>0.1</td><td>0.0</td><td>0.0</td><td>9.6</td><td>1.3</td><td>135.42</td><td>1.2</td><td>0.7</td><td>583.33</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.2</td><td>0.1</td><td>500.0</td><td>118.8</td><td>28.0</td><td>235.69</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>130.2</td><td>30.3</td><td>232.72</td><td>0.2</td><td>1.2</td><td>6000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.3</td><td>7.6</td><td>12.9</td><td>0.01</td><td>0.53</td><td>0.14</td></tr><tr role="row" class="odd"><td class="sorting_1">1</td><td>1974</td><td>14</td><td>Chhattisgarh</td><td>Durg</td><td>587.4</td><td>219.0</td><td>372.83</td><td>36.5</td><td>22.4</td><td>613.7</td><td>0.5</td><td>0.4</td><td>800.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.5</td><td>0.4</td><td>800.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>2.9</td><td>2.9</td><td>1000.0</td><td>0.8</td><td>0.3</td><td>375.0</td><td>0.2</td><td>0.1</td><td>500.0</td><td>54.9</td><td>41.0</td><td>746.81</td><td>32.5</td><td>37.6</td><td>1156.92</td><td>153.1</td><td>61.3</td><td>400.39</td><td>0.0</td><td>0.0</td><td>0.0</td><td>9.9</td><td>1.4</td><td>141.41</td><td>1.4</td><td>0.8</td><td>571.43</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.2</td><td>0.1</td><td>500.0</td><td>85.0</td><td>21.4</td><td>251.76</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>96.8</td><td>23.9</td><td>246.9</td><td>0.8</td><td>1.5</td><td>1875.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.21</td><td>7.44</td><td>12.64</td><td>0.03</td><td>0.45</td><td>0.06</td></tr><tr role="row" class="even"><td class="sorting_1">1</td><td>1975</td><td>14</td><td>Chhattisgarh</td><td>Durg</td><td>598.3</td><td>454.0</td><td>758.82</td><td>49.2</td><td>27.8</td><td>565.04</td><td>0.2</td><td>0.2</td><td>1000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.2</td><td>0.2</td><td>1000.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>2.9</td><td>2.9</td><td>1000.0</td><td>0.8</td><td>0.2</td><td>250.0</td><td>0.2</td><td>0.2</td><td>1000.0</td><td>58.3</td><td>30.2</td><td>518.01</td><td>34.2</td><td>26.7</td><td>780.7</td><td>320.2</td><td>121.2</td><td>378.51</td><td>0.0</td><td>0.0</td><td>0.0</td><td>8.6</td><td>0.9</td><td>104.65</td><td>1.6</td><td>0.9</td><td>562.5</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.2</td><td>0.1</td><td>500.0</td><td>120.7</td><td>28.7</td><td>237.78</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>131.5</td><td>30.8</td><td>234.22</td><td>0.8</td><td>1.4</td><td>1750.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.11</td><td>7.86</td><td>12.97</td><td>0.05</td><td>0.52</td><td>0.08</td></tr></tbody></table></div></div><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 16,146 entries</div><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><a class="paginate_button previous disabled" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="-1" id="DataTables_Table_0_previous">Previous</a><span><a class="paginate_button current" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0">2</a><a class="paginate_button " aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0">3</a><a class="paginate_button " aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0">4</a><a class="paginate_button " aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0">5</a><span class="ellipsis">…</span><a class="paginate_button " aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0">1615</a></span><a class="paginate_button next" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0" id="DataTables_Table_0_next">Next</a></div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Page Footer Start -->
+    	<section id="pageFooter"><footer class="home3 footer-bottom main-footer wf100 main_section mb-20" style="background: #0e7a39!important;padding:35px 20px;">
+		    <div class="container-fluid">
+		      <div class="row">
+		        <div class="col-md-5 col-sm-6">
+		          <div class="footer-widget">
+		            <h6>About DLD</h6>
+		            <ul class="text-white">
+		              <li style="text-align:justify;"><span> The District Level Database (DLD) for Indian agriculture and allied sectors provides a comprehensive one-stop shop for data on rural sector that enables testing of key research hypotheses, identification of relevant districts / regions for technology dissemination, promoting rural pro-poor programs / development initiatives and identification of relevant representative districts for micro level assessment.</span></li>
+		          </ul></div>
+		        </div>
+		        <div class="col-md-2 col-sm-6">
+		          <div class="footer-widget">
+		            <h6>Important Links</h6>
+		            <ul>
+		              <li><a href="about-dld.html"> About DLD</a></li>
+		              <li><a href="crops.html"> Apportioned data</a></li>
+		              <li><a class="UnapportionedLink" href="crops.html"> Unapportioned data</a></li>
+		              <li><a href="additional.html"> Additional data</a></li>
+		              <li><a href="definition_standard.html"> Definitions and
+		              Standards</a></li>
+		              <li><a href="support.html"> Support</a></li>
+		            </ul>
+		          </div>
+		        </div>
+		       <div class="col-md-5 col-sm-6">
+		          <div class="footer-widget">
+		            <h6>Contact Us</h6>
+		            <ul class="text-white">
+		              <li><span> S Nedumaran - Senior Scientist (Economics)</span></li>
+		              <li><span>  Global Program on Innovation Systems for Drylands (ISD), ICRISAT </span></li>
+		              <li><span> Address: Patancheru, Hyderabad, Telangana - 502324, India <br>
+					   Email: s.nedumaran@cgiar.org, sbdm@cgiar.org<br>
+					   Phone: +91 8455683071
+					   </span></li>
+		            </ul>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </footer>
+
+		<footer class="footer wf100" style="background: #615c5c!important;">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<p class="copyr text-center">Copyright © 2020 ICRISAT All Rights Reserved. </p>
+					</div>
+				</div>
+			</div>
+		</footer></section>
+    <!-- Page Footer End -->
+	</div>
+	<!--Wrapper End-->
+
+
+	<!-- <script src="select2/js/jquery.min.js"></script> -->
+	<script src="../lib/select2/js/jquery.min.js"></script>
+	<!-- bootstrap framework -->
+	<script src="../lib/select2/bootstrap/js/bootstrap.min.js"></script>
+	<!-- jQuery resize event -->
+	<script src="../lib/select2/js/jquery.ba-resize.min.js"></script>
+	<!-- jquery cookie -->
+	<script src="../lib/select2/js/jquery_cookie.min.js"></script>
+	<!-- retina ready -->
+	<script src="../lib/select2/js/retina.min.js"></script>
+	<!-- typeahead -->
+	<script src="../lib/select2/js/lib/typeahead.js/typeahead.min.js"></script>
+	<script src="../lib/select2/js/lib/typeahead.js/hogan-2.0.0.js"></script>
+	<script src="../lib/select2/js/lib/jQuery-slimScroll/jquery.slimscroll.min.js"></script>
+	<script src="../lib/select2/js/lib/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+	<!-- touchSwipe -->
+	<script src="../lib/select2/js/lib/TouchSwipe/jquery.touchSwipe.min.js"></script>
+	<!-- Navgoco -->
+	<script src="../lib/select2/js/lib/navgoco/jquery.navgoco.min.js"></script>
+	<!-- ebro common scripts/functions -->
+	<script src="../lib/select2/js/ebro_common.js"></script>
+	<!--[[ page specific plugins ]]-->
+
+	<!-- 2col multiselect -->
+	<script src="../lib/select2/js/lib/multi-select/js/jquery.multi-select.js"></script>
+	<script src="../lib/select2/js/jquery.quicksearch.js"></script>
+	<!-- select2 -->
+	<script src="../lib/select2/js/lib/select2/select2.min.js"></script>
+	<!-- chained selects -->
+	<script src="../lib/select2/js/lib/chained/jquery.chained.min.js"></script>
+	<script src="../lib/select2/js/lib/chained/jquery.chained.remote.min.js"></script>
+	<!-- combobox -->
+	<script src="../lib/select2/js/lib/fuelUx/combobox.js"></script>
+	<!-- masked inputs -->
+	<script src="../lib/select2/js/lib/jquery.inputmask/jquery.inputmask.bundle.min.js"></script>
+	<!-- password strength meter -->
+	<script src="../lib/select2/js/lib/complexify/jquery.complexify.min.js"></script>
+	<script src="../lib/select2/js/lib/complexify/jquery.complexify.banlist.js"></script>
+	<script src="../lib/select2/js/lib/colorpicker/js/bootstrap-colorpicker.js"></script>
+	<!-- iCheck -->
+	<script src="../lib/select2/js/lib/iCheck/jquery.icheck.min.js"></script>
+	<!-- noUI slider -->
+	<script src="../lib/select2/js/lib/noUiSlider/jquery.nouislider.min.js"></script>
+	<!-- Ion rangeSlider -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
+	<!-- autosize -->
+	<script src="../lib/select2/js/lib/autosize/jquery.autosize-min.js"></script>
+	<!-- textarea counter -->
+	<script src="../lib/select2/js/lib/jquery_textarea_counter/jquery.textareaCounter.plugin.js"></script>
+	<!-- fileupload widgets -->
+	<script src="../lib/select2/js/lib/jasny_plugins/bootstrap-fileupload.js"></script>
+
+	<!-- fSelect -->
+	<script src="../lib/fSelect-master/fSelect.js"></script>
+	<!-- DataTables -->
+	<script src="../lib/DataTables/media/js/jquery.dataTables.min.js"></script>
+	<script src="../lib/DataTables/Buttons/js/dataTables.buttons.min.js"></script>
+	<script src="../lib/DataTables/Buttons/js/buttons.html5.min.js"></script>
+	<!-- JS -->
+	<script src="./assets/js/dldOperations.js"></script>
+	<script src="header-footer/header.js"></script>
+	<script src="header-footer/footer.js"></script>
+
+</body></html>
